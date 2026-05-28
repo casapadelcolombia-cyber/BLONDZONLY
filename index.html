@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blondz Only — Professional Toning for Blonde Hair</title>
+<meta name="description" content="Professional toning and nourishing hair care for blonde, silver and copper tones. Available on Amazon.">
+<link rel="icon" type="image/png" href="images/favicon.png">
+
+<!-- ============================================================= -->
+<!-- EDIT ONLY THIS BLOCK: YOUR PRODUCTS                            -->
+<!-- ============================================================= -->
+<!--   name    : the title                                          -->
+<!--   desc    : short description                                  -->
+<!--   price   : free text (leave "" to hide the price)             -->
+<!--   image   : path to photo. Put your files in the images/ folder-->
+<!--             named exactly like below. While missing, a clean   -->
+<!--             placeholder is shown automatically.                -->
+<!--   amazon  : the Amazon product link                            -->
+<script>
+const PRODUCTS = [
+  {
+    name: "Blonde Pearl",
+    desc: "Purple toning mask that removes yellow and brassy tones for a luminous pearl blonde. With argan oil and biotin.",
+    price: "$16.90",
+    image: "images/blonde-pearl.jpg",
+    amazon: "https://www.amazon.com/dp/B093TJ5RKK"
+  },
+  {
+    name: "Icy Cool Blonde",
+    desc: "Purple toning mask for platinum, icy results. Removes yellow tones from blonde and gray hair. With argan oil and biotin.",
+    price: "$16.90",
+    image: "images/icy-cool-blonde.jpg",
+    amazon: "https://www.amazon.com/dp/B0G4S7XCQC"
+  },
+  {
+    name: "Silver Ash Blonde",
+    desc: "Purple toning mask for cool ash and silver reflections, cancelling yellow and orange tones. With argan oil and biotin.",
+    price: "$16.90",
+    image: "images/silver-ash-blonde.jpg",
+    amazon: "https://www.amazon.com/dp/B0CTJ6219V"
+  },
+  {
+    name: "Irish Copper",
+    desc: "Color-depositing mask that protects and intensifies copper tones. With argan oil and biotin.",
+    price: "$16.90",
+    image: "images/irish-copper.jpg",
+    amazon: "https://www.amazon.com/dp/B0GML9TYMG"
+  }
+];
+
+const CONFIG = {
+  buttonText: "Buy on Amazon",
+  whatsapp: "",                       // e.g. "573001234567" — leave "" to hide
+  instagram: "https://instagram.com/" // your profile URL
+};
+</script>
+<!-- ============================================================= -->
+<!-- END OF EDITABLE BLOCK                                          -->
+<!-- ============================================================= -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --bg2:#F4F3F1;
+    --ink:#111111;
+    --ink-soft:#6B6B6B;
+    --line:#E4E2DE;
+    --black:#111111;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Jost',sans-serif;
+    background:var(--bg);color:var(--ink);
+    line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  h1,h2,h3{font-family:'Bodoni Moda',serif;font-weight:400;line-height:1.05;}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:16px clamp(20px,5vw,64px);
+    background:rgba(255,255,255,.88);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  header .logo img{height:30px;display:block;}
+  nav a{
+    font-size:12px;letter-spacing:2px;text-transform:uppercase;
+    text-decoration:none;color:var(--ink-soft);margin-left:30px;transition:color .25s;
+  }
+  nav a:hover{color:var(--ink);}
+  @media(max-width:600px){nav a{margin-left:18px;}}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;min-height:82vh;
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    text-align:center;
+    padding:clamp(48px,9vw,120px) clamp(20px,6vw,80px);
+    background:var(--bg2);overflow:hidden;
+  }
+  .hero::before,.hero::after{
+    content:"";position:absolute;left:6%;right:6%;height:2px;background:var(--ink);
+  }
+  .hero::before{top:8%;}
+  .hero::after{bottom:8%;}
+  .hero .eyebrow{
+    font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--ink-soft);
+    margin-bottom:26px;opacity:0;animation:rise .8s .1s forwards;
+  }
+  .hero h1{
+    font-size:clamp(46px,9vw,110px);max-width:13ch;margin-bottom:28px;
+    opacity:0;animation:rise .9s .25s forwards;
+  }
+  .hero h1 em{font-style:italic;}
+  .hero p{
+    font-size:clamp(15px,1.8vw,19px);color:var(--ink-soft);max-width:48ch;
+    margin-bottom:42px;font-weight:300;opacity:0;animation:rise .9s .4s forwards;
+  }
+  .cta{
+    display:inline-flex;align-items:center;gap:10px;
+    background:var(--black);color:#fff;padding:16px 38px;
+    font-size:12px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;
+    transition:transform .25s, opacity .25s;
+    opacity:0;animation:rise .9s .55s forwards;
+  }
+  .cta:hover{transform:translateY(-2px);opacity:.85;}
+  @keyframes rise{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:none;}}
+
+  /* ---------- PRODUCTS ---------- */
+  .productos{padding:clamp(64px,9vw,128px) clamp(20px,6vw,80px);}
+  .sec-head{text-align:center;margin-bottom:70px;}
+  .sec-head .eyebrow{font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--ink-soft);}
+  .sec-head h2{font-size:clamp(36px,5.5vw,68px);margin-top:12px;}
+  .sec-head p{color:var(--ink-soft);font-weight:300;margin-top:14px;}
+
+  .grid{
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+    gap:clamp(18px,2.4vw,32px);max-width:1280px;margin:0 auto;
+  }
+  .card{
+    background:var(--bg);border:1px solid var(--line);
+    display:flex;flex-direction:column;
+    transition:transform .3s, box-shadow .3s, border-color .3s;
+  }
+  .card:hover{transform:translateY(-6px);box-shadow:0 26px 50px -30px rgba(0,0,0,.4);border-color:var(--ink);}
+  .card .foto{
+    aspect-ratio:1/1;width:100%;background:var(--bg2);
+    display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;
+  }
+  .card .foto img{width:100%;height:100%;object-fit:cover;display:block;}
+  .card .foto .ph{
+    font-family:'Bodoni Moda',serif;font-size:19px;color:var(--ink-soft);
+    text-align:center;padding:20px;letter-spacing:1px;
+  }
+  .card .body{padding:26px 24px 28px;display:flex;flex-direction:column;flex:1;}
+  .card h3{font-size:26px;margin-bottom:10px;}
+  .card .desc{font-size:14px;color:var(--ink-soft);font-weight:300;flex:1;margin-bottom:20px;}
+  .card .precio{font-size:18px;font-weight:500;margin-bottom:18px;}
+  .card .buy{
+    display:flex;align-items:center;justify-content:center;gap:9px;
+    background:var(--black);color:#fff;padding:14px;
+    font-size:12px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;
+    transition:opacity .25s;
+  }
+  .card .buy:hover{opacity:.82;}
+  .card .buy svg{width:15px;height:15px;}
+
+  /* ---------- BENEFITS (black band) ---------- */
+  .beneficios{background:var(--black);color:#fff;padding:clamp(60px,8vw,104px) clamp(20px,6vw,80px);}
+  .ben-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:52px;max-width:1100px;margin:0 auto;text-align:center;}
+  .ben-grid h3{font-size:34px;margin-bottom:12px;color:#fff;}
+  .ben-grid p{font-size:14px;color:#B9B9B9;font-weight:300;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--black);color:#fff;padding:clamp(40px,6vw,72px) clamp(20px,6vw,80px) 44px;text-align:center;border-top:1px solid #2A2A2A;}
+  footer .logo img{height:54px;margin:0 auto 22px;display:block;}
+  footer .social a{color:#B9B9B9;text-decoration:none;margin:0 14px;font-size:12px;letter-spacing:2px;text-transform:uppercase;transition:color .25s;}
+  footer .social a:hover{color:#fff;}
+  footer .copy{margin-top:26px;font-size:11px;color:#777;letter-spacing:.5px;}
+
+  /* ---------- WHATSAPP ---------- */
+  .wa{position:fixed;right:22px;bottom:22px;z-index:60;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.22);transition:transform .25s;}
+  .wa:hover{transform:scale(1.08);}
+  .wa svg{width:30px;height:30px;fill:#fff;}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="#" class="logo"><img src="images/logo-black.png" alt="Blondz Only"></a>
+  <nav>
+    <a href="#productos">Products</a>
+    <a href="#beneficios">Benefits</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <span class="eyebrow">Professional Blonde Care</span>
+  <h1>Your tone, <em>perfected.</em></h1>
+  <p>Professional toning and nourishment for blonde, silver and copper hair — salon results, made simple.</p>
+  <a href="#productos" class="cta">Shop the collection</a>
+</section>
+
+<section class="productos" id="productos">
+  <div class="sec-head">
+    <span class="eyebrow">Collection</span>
+    <h2>Our Products</h2>
+    <p>Available directly on Amazon, with fast and secure shipping.</p>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section class="beneficios" id="beneficios">
+  <div class="ben-grid">
+    <div><h3>Tones</h3><p>Targeted pigments that neutralize unwanted warmth and refine your color.</p></div>
+    <div><h3>Nourishes</h3><p>Argan oil that repairs and softens bleached or color-treated hair.</p></div>
+    <div><h3>Shines</h3><p>A luminous, professional salon finish in the comfort of your home.</p></div>
+  </div>
+</section>
+
+<footer>
+  <div class="logo"><img src="images/logo-white.png" alt="Blondz Only"></div>
+  <div class="social" id="social"></div>
+  <div class="copy">&copy; <span id="year"></span> Blondz Only. All rights reserved.</div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const cartIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>';
+
+  const grid = document.getElementById('grid');
+  PRODUCTS.forEach(p => {
+    const priceHTML = p.price ? `<div class="precio">${p.price}</div>` : '';
+    grid.insertAdjacentHTML('beforeend', `
+      <article class="card">
+        <div class="foto">
+          <img src="${p.image}" alt="${p.name}"
+               onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<span class=&quot;ph&quot;>${p.name}<br><small style=&quot;font-size:12px&quot;>(add photo)</small></span>');">
+        </div>
+        <div class="body">
+          <h3>${p.name}</h3>
+          <p class="desc">${p.desc}</p>
+          ${priceHTML}
+          <a class="buy" href="${p.amazon}" target="_blank" rel="noopener">${cartIcon}${CONFIG.buttonText}</a>
+        </div>
+      </article>
+    `);
+  });
+
+  const social = document.getElementById('social');
+  if (CONFIG.instagram) social.insertAdjacentHTML('beforeend', `<a href="${CONFIG.instagram}" target="_blank" rel="noopener">Instagram</a>`);
+
+  if (CONFIG.whatsapp) {
+    const wa = document.createElement('a');
+    wa.className='wa'; wa.href='https://wa.me/'+CONFIG.whatsapp; wa.target='_blank'; wa.rel='noopener';
+    wa.innerHTML='<svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.82 9.82 0 0 0 1.51 5.26l-.999 3.648 3.978-1.044z"/></svg>';
+    document.body.appendChild(wa);
+  }
+</script>
+
+</body>
+</html>
