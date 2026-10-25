@@ -1,306 +1,522 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blondz Only — Professional Toning for Blonde Hair</title>
-<meta name="description" content="Professional toning and nourishing hair care for blonde, silver and copper tones. Available on Amazon.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Blondz Only | Toning and Color Masks for Blonde, Silver and Copper Hair</title>
+<meta name="description" content="Salon-style toning masks with argan oil and biotin. Neutralize yellow and brassy tones at home in 5 to 10 minutes. Four shades, sold on Amazon.">
+<meta name="theme-color" content="#FFFFFF">
 <link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="canonical" href="https://www.blondzonly.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.blondzonly.com/">
+<meta property="og:title" content="Blondz Only | Toning masks with argan oil and biotin">
+<meta property="og:description" content="Neutralize yellow and brassy tones at home. Blonde Pearl, Icy Cool Blonde, Silver Ash Blonde and Irish Copper, sold on Amazon.">
+<meta property="og:image" content="https://www.blondzonly.com/assets/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
 
 <!-- ============================================================= -->
-<!-- EDIT ONLY THIS BLOCK: YOUR PRODUCTS                            -->
+<!-- EDIT ONLY THIS BLOCK: PRICES, RATING, LINKS AND SHADES         -->
 <!-- ============================================================= -->
 <script>
-const PRODUCTS = [
-  {
-    name: "Blonde Pearl",
-    desc: "Purple toning mask that removes yellow and brassy tones for a luminous pearl blonde. With argan oil and biotin.",
-    price: "$16.90",
-    images: ["images/blonde-pearl.jpg","images/blonde-pearl-2.jpg","images/blonde-pearl-3.jpg","images/blonde-pearl-4.jpg","images/blonde-pearl-5.jpg","images/blonde-pearl-6.jpg","images/blonde-pearl-7.jpg","images/blonde-pearl-8.jpg"],
-    amazon: "https://www.amazon.com/dp/B093TJ5RKK"
+window.BLONDZ = {
+  // Two stores. "eu" sends European visitors to Amazon UK with prices in pounds.
+  regions: {
+    us: {
+      label: "United States", short: "US", store: "Amazon",
+      size: "11.8 fl oz (350 ml)", sizeShort: "11.8 fl oz",
+      rating: { value: "4.5", count: 350, checked: "October 2026", stars: { 5: 76, 4: 11, 3: 4, 2: 4, 1: 5 } },
+      reviewsUrl: "https://www.amazon.com/dp/B093TJ5RKK#customerReviews",
+      shipping: "shipped by Amazon"
+    },
+    eu: {
+      label: "Europe (Amazon UK)", short: "EU", store: "Amazon UK",
+      size: "350 ml", sizeShort: "350 ml",
+      rating: { value: "4.3", count: 142, checked: "October 2026", stars: { 5: 72, 4: 6, 3: 8, 2: 8, 1: 6 } },
+      reviewsUrl: "https://www.amazon.co.uk/dp/B093TJ5RKK#customerReviews",
+      shipping: "sold on Amazon UK"
+    }
   },
-  {
-    name: "Icy Cool Blonde",
-    desc: "Purple toning mask for platinum, icy results. Removes yellow tones from blonde and gray hair. With argan oil and biotin.",
-    price: "$16.90",
-    images: ["images/icy-cool-blonde.jpg","images/icy-cool-blonde-2.jpg","images/icy-cool-blonde-3.jpg","images/icy-cool-blonde-4.jpg","images/icy-cool-blonde-5.jpg","images/icy-cool-blonde-6.jpg","images/icy-cool-blonde-7.jpg","images/icy-cool-blonde-8.jpg"],
-    amazon: "https://www.amazon.com/dp/B0G4S7XCQC"
-  },
-  {
-    name: "Silver Ash Blonde",
-    desc: "Purple toning mask for cool ash and silver reflections, cancelling yellow and orange tones. With argan oil and biotin.",
-    price: "$16.90",
-    images: ["images/silver-ash-blonde.jpg","images/silver-ash-blonde-2.jpg","images/silver-ash-blonde-3.jpg","images/silver-ash-blonde-4.jpg","images/silver-ash-blonde-5.jpg","images/silver-ash-blonde-6.jpg","images/silver-ash-blonde-7.jpg","images/silver-ash-blonde-8.jpg"],
-    amazon: "https://www.amazon.com/dp/B0CTJ6219V"
-  },
-  {
-    name: "Irish Copper",
-    desc: "Color-depositing mask that protects and intensifies copper tones. With argan oil and biotin.",
-    price: "$16.90",
-    images: ["images/irish-copper.jpg","images/irish-copper-2.jpg","images/irish-copper-3.jpg","images/irish-copper-4.jpg","images/irish-copper-5.jpg","images/irish-copper-6.jpg","images/irish-copper-7.jpg","images/irish-copper-8.jpg"],
-    amazon: "https://www.amazon.com/dp/B0GML9TYMG"
-  }
-];
-
-const CONFIG = {
-  buttonText: "Buy on Amazon",
-  whatsapp: "",
-  instagram: "https://www.instagram.com/blondzonlyus/"
+  instagram: "https://www.instagram.com/blondzonlyus/",
+  tiktok: "https://www.tiktok.com/@blondzonlyus",
+  shades: [
+    {
+      id: "blonde-pearl", name: "Blonde Pearl", pack: "Rubio Marfil", word: "pearl blonde", short: "Pearl",
+      price: { us: "$16.90", eu: "£13.90" },
+      amazon: { us: "https://www.amazon.com/dp/B093TJ5RKK", eu: "https://www.amazon.co.uk/dp/B093TJ5RKK" },
+      line: "Warm ivory-pearl toning",
+      forWhom: "For highlighted or bleached blondes that turn yellow or brassy.",
+      desc: "A purple toning mask that neutralizes yellow and brassy tones for a soft, luminous ivory-pearl blonde. With argan oil and biotin.",
+      before: "Before: long hair with brassy, orange tones", after: "After: soft ivory-pearl blonde",
+      tint: "#F3EBDD", accent: "#8E2DF0", bottleWidth: 331,
+      gallery: ["images/blonde-pearl.jpg","images/blonde-pearl-2.jpg","images/blonde-pearl-3.jpg","images/blonde-pearl-4.jpg","images/blonde-pearl-5.jpg","images/blonde-pearl-7.jpg","images/blonde-pearl-8.jpg"]
+    },
+    {
+      id: "icy-cool", name: "Icy Cool Blonde", pack: "Canas Plata", word: "icy blonde", short: "Icy",
+      price: { us: "$16.90", eu: "£13.90" },
+      amazon: { us: "https://www.amazon.com/dp/B0G4S7XCQC", eu: "https://www.amazon.co.uk/dp/B0G4S7XCQC" },
+      line: "Icy platinum toning",
+      forWhom: "For very light blonde, platinum (levels 9 to 10) and gray hair that has turned yellow.",
+      desc: "An intensive purple toning mask for very light blonde, platinum and yellowed gray hair. With argan oil and biotin.",
+      before: "Before: platinum hair with yellow tones", after: "After: bright, icy platinum blonde",
+      tint: "#EAF0F6", accent: "#4F9BD1", bottleWidth: 357,
+      gallery: ["images/icy-cool-blonde.jpg","images/icy-cool-blonde-2.jpg","images/icy-cool-blonde-3.jpg","images/icy-cool-blonde-4.jpg","images/icy-cool-blonde-5.jpg","images/icy-cool-blonde-7.jpg","images/icy-cool-blonde-8.jpg"]
+    },
+    {
+      id: "silver-ash", name: "Silver Ash Blonde", pack: "Rubio Cenizo", word: "ash blonde", short: "Silver",
+      price: { us: "$16.90", eu: "£13.90" },
+      amazon: { us: "https://www.amazon.com/dp/B0CTJ6219V", eu: "https://www.amazon.co.uk/dp/B0CTJ6219V" },
+      line: "Cool silver-ash toning",
+      forWhom: "For highlights and balayage that turn orange or brassy.",
+      desc: "A blue-violet toning mask that neutralizes orange and brassy reflections for a cool silver-ash blonde. With argan oil and biotin.",
+      before: "Before: long hair with orange, brassy reflections, seen from the back", after: "After: cool silver-ash blonde, seen from the back",
+      tint: "#ECEAF1", accent: "#5E13A5", bottleWidth: 354,
+      gallery: ["images/silver-ash-blonde.jpg","images/silver-ash-blonde-2.jpg","images/silver-ash-blonde-3.jpg","images/silver-ash-blonde-4.jpg","images/silver-ash-blonde-5.jpg","images/silver-ash-blonde-7.jpg","images/silver-ash-blonde-8.jpg"]
+    },
+    {
+      id: "irish-copper", name: "Irish Copper", pack: "Cobre Dorado", word: "copper", short: "Copper",
+      price: { us: "$16.90", eu: "£13.90" },
+      amazon: { us: "https://www.amazon.com/dp/B0GML9TYMG", eu: "https://www.amazon.co.uk/dp/B0GML9TYMG" },
+      line: "Copper color-depositing",
+      forWhom: "For red, copper, auburn and mahogany hair that has faded. Not a blonde toner.",
+      desc: "A color-depositing mask that revives faded copper, red and auburn tones. With argan oil and biotin.",
+      before: "Before: faded, dull copper hair", after: "After: rich, vivid copper",
+      tint: "#F6E6DC", accent: "#D9531E", bottleWidth: 356,
+      gallery: ["images/irish-copper.jpg","images/irish-copper-2.jpg","images/irish-copper-3.jpg","images/irish-copper-4.jpg","images/irish-copper-5.jpg","images/irish-copper-7.jpg","images/irish-copper-8.jpg"]
+    }
+  ]
 };
 </script>
 <!-- ============================================================= -->
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<style>
-  :root{
-    --bg:#FFFFFF;
-    --bg2:#F4F3F1;
-    --ink:#111111;
-    --ink-soft:#6B6B6B;
-    --line:#E4E2DE;
-    --black:#111111;
-    --purple:#7C2BD9;     /* morado vibrante de la marca */
-    --purple-dark:#5E1FA6;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
-  h1,h2,h3{font-family:'Bodoni Moda',serif;font-weight:400;line-height:1.05;}
-
-  /* ---------- HEADER ---------- */
-  header{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:16px clamp(20px,5vw,64px);background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
-  header .logo img{height:30px;display:block;}
-  nav a{font-size:12px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;color:var(--ink-soft);margin-left:30px;transition:color .25s;}
-  nav a:hover{color:var(--purple);}
-  @media(max-width:600px){nav a{margin-left:18px;}}
-
-  /* ---------- HERO (split: text + before/after slider) ---------- */
-  .hero{display:grid;grid-template-columns:1fr 1fr;min-height:88vh;align-items:center;background:var(--bg2);overflow:hidden;}
-  .hero-text{padding:clamp(36px,6vw,90px) clamp(24px,5vw,72px);}
-  .hero-text .eyebrow{font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--purple);margin-bottom:22px;font-weight:500;}
-  .hero-text h1{font-size:clamp(40px,5.5vw,84px);margin-bottom:24px;}
-  .hero-text h1 em{font-style:italic;color:var(--purple);}
-  .hero-text p{font-size:clamp(15px,1.6vw,19px);color:var(--ink-soft);max-width:44ch;margin-bottom:36px;font-weight:300;}
-  .cta{display:inline-flex;align-items:center;gap:10px;background:var(--purple);color:#fff;padding:16px 38px;font-size:12px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:40px;transition:transform .25s, background .25s;}
-  .cta:hover{transform:translateY(-2px);background:var(--purple-dark);}
-
-  /* before/after slider */
-  .ba{position:relative;width:100%;height:88vh;min-height:420px;overflow:hidden;user-select:none;touch-action:none;cursor:ew-resize;background:#fff;}
-  .ba img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:top center;pointer-events:none;}
-  .ba .after-wrap{position:absolute;inset:0;width:50%;overflow:hidden;}
-  .ba .after-wrap img{width:200%;max-width:none;}      /* compensa el recorte al 50% */
-  .ba .lbl{position:absolute;top:22px;z-index:4;background:var(--purple);color:#fff;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:7px 16px;border-radius:30px;font-weight:500;}
-  .ba .lbl.before{right:22px;}
-  .ba .lbl.after{left:22px;}
-  .ba .divider{position:absolute;top:0;bottom:0;left:50%;width:3px;background:var(--purple);z-index:5;transform:translateX(-50%);}
-  .ba .handle{position:absolute;top:50%;left:50%;z-index:6;width:48px;height:48px;border-radius:50%;background:var(--purple);transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.3);}
-  .ba .handle svg{width:22px;height:22px;fill:#fff;}
-  @media(max-width:820px){
-    .hero{grid-template-columns:1fr;}
-    .hero-text{order:1;text-align:center;padding-bottom:0;}
-    .hero-text p{margin-left:auto;margin-right:auto;}
-    .hero-tiktok{margin-left:auto;margin-right:auto;}
-    .ba{order:2;height:70vh;}
-  }
-
-  /* ---------- PRODUCTS ---------- */
-  .productos{padding:clamp(64px,9vw,128px) clamp(20px,6vw,80px);}
-  .sec-head{text-align:center;margin-bottom:70px;}
-  .sec-head .eyebrow{font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--purple);font-weight:500;}
-  .sec-head h2{font-size:clamp(36px,5.5vw,68px);margin-top:12px;}
-  .sec-head p{color:var(--ink-soft);font-weight:300;margin-top:14px;}
-
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:clamp(20px,2.6vw,36px);max-width:1320px;margin:0 auto;}
-  .card{background:var(--bg);border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .3s, box-shadow .3s, border-color .3s;}
-  .card:hover{transform:translateY(-6px);box-shadow:0 26px 50px -30px rgba(124,43,217,.4);border-color:var(--purple);}
-  .foto{aspect-ratio:1/1;width:100%;background:var(--bg2);overflow:hidden;position:relative;}
-  .foto img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .2s;}
-  .hero-tiktok{width:96px;height:96px;display:block;margin-bottom:20px;filter:drop-shadow(0 3px 10px rgba(0,0,0,.2));}
-  .stars{display:flex;align-items:center;gap:3px;margin-bottom:14px;}
-  .stars svg{width:17px;height:17px;fill:#FFB400;}
-  .stars .count{font-size:13px;color:var(--ink-soft);margin-left:6px;font-weight:400;}
-  .thumbs{display:flex;gap:8px;padding:12px 12px 4px;overflow-x:auto;scroll-behavior:smooth;}
-  .thumbs::-webkit-scrollbar{height:6px;}
-  .thumbs::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px;}
-  .thumb{flex:0 0 auto;width:52px;height:52px;padding:0;cursor:pointer;border:1px solid var(--line);background:var(--bg2);overflow:hidden;transition:border-color .2s, transform .15s;}
-  .thumb img{width:100%;height:100%;object-fit:cover;display:block;}
-  .thumb:hover{transform:translateY(-2px);}
-  .thumb.active{border-color:var(--purple);border-width:2px;}
-  .card .body{padding:20px 24px 28px;display:flex;flex-direction:column;flex:1;}
-  .card h3{font-size:26px;margin-bottom:10px;}
-  .card .desc{font-size:14px;color:var(--ink-soft);font-weight:300;flex:1;margin-bottom:20px;}
-  .card .precio{font-size:20px;font-weight:500;margin-bottom:18px;color:var(--purple);}
-  .card .buy{display:flex;align-items:center;justify-content:center;gap:9px;background:var(--black);color:#fff;padding:14px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:background .25s;}
-  .card .buy:hover{background:var(--purple);}
-  .card .buy svg{width:15px;height:15px;}
-
-  /* ---------- BENEFITS ---------- */
-  .beneficios{background:var(--purple);color:#fff;padding:clamp(60px,8vw,104px) clamp(20px,6vw,80px);}
-  .ben-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:52px;max-width:1100px;margin:0 auto;text-align:center;}
-  .ben-grid h3{font-size:34px;margin-bottom:12px;color:#fff;}
-  .ben-grid p{font-size:14px;color:#EADBFB;font-weight:300;}
-
-  /* ---------- FOOTER ---------- */
-  footer{background:var(--black);color:#fff;padding:clamp(40px,6vw,72px) clamp(20px,6vw,80px) 44px;text-align:center;border-top:1px solid #2A2A2A;}
-  footer .logo img{height:54px;margin:0 auto 22px;display:block;}
-  footer .social a{color:#B9B9B9;text-decoration:none;margin:0 14px;font-size:12px;letter-spacing:2px;text-transform:uppercase;transition:color .25s;}
-  footer .social a:hover{color:var(--purple);}
-  footer .copy{margin-top:26px;font-size:11px;color:#777;letter-spacing:.5px;}
-
-  /* ---------- WHATSAPP ---------- */
-  .wa{position:fixed;right:22px;bottom:22px;z-index:60;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.22);transition:transform .25s;}
-  .wa:hover{transform:scale(1.08);}
-  .wa svg{width:30px;height:30px;fill:#fff;}
-</style>
+<script>
+/* Pick the shade before the hero is parsed (?shade= link, else the visitor's last shade) and preload exactly that photo. */
+(function () {
+  var C = window.BLONDZ, id = null;
+  try { id = new URLSearchParams(location.search).get("shade") || localStorage.getItem("bz-shade"); } catch (e) {}
+  if (!C.shades.some(function (s) { return s.id === id; })) id = C.shades[0].id;
+  C.initShade = id;
+  C.heroSizes = "(max-width: 860px) 88vw, (max-width: 1280px) 50vw, 640px";
+  var l = document.createElement("link");
+  l.rel = "preload"; l.as = "image"; l.setAttribute("fetchpriority", "high");
+  l.setAttribute("imagesrcset", "assets/img/ba-" + id + "-after-sm.webp 720w, assets/img/ba-" + id + "-after.webp 1119w");
+  l.setAttribute("imagesizes", C.heroSizes);
+  document.head.appendChild(l);
+})();
+</script>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/bodoni-moda.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/bodoni-moda-italic.woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-<header>
-  <a href="#" class="logo"><img src="images/logo-black.png" alt="Blondz Only"></a>
-  <nav>
-    <a href="#productos">Products</a>
-    <a href="#beneficios">Benefits</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <g id="logo-letters">
+      <path d="M74.1,132.1h3.8c1.7,0,3.4,0.3,5.1,1c1.6,0.7,3.1,1.7,4.3,2.9c1.2,1.2,2.2,2.6,2.8,4.1c0.6,1.5,1,3.2,1,4.9 c0,0.8-0.2,1.9-0.5,3.1c-0.4,1.2-0.9,2.4-1.5,3.5l-1.1,2l2.1,1c0.7,0.3,1.4,0.7,2.1,1.2c0.6,0.4,1.1,0.8,1.5,1.2 c1.4,1.5,2.5,3.1,3.3,5c0.8,1.8,1.1,3.7,1.1,5.8c0,2.1-0.4,4-1.1,5.8c-0.8,1.8-1.8,3.5-3.3,4.9c-1.4,1.4-3.1,2.6-4.9,3.4 c-1.9,0.8-3.8,1.1-5.8,1.1h-7.3h-2.2h-1.7h-7.2v-51H74.1z M71.4,153.1l2.2-0.1c0.8,0,1.9-0.1,3.4-0.2c0.3,0,0.6,0,0.9,0l0.1,0 c1.1-0.1,1.9-0.3,2.5-0.6c0.7-0.3,1.5-0.9,2.2-1.6c0.6-0.7,1.1-1.4,1.5-2.3c0.3-0.8,0.5-1.7,0.5-2.7c0-0.9-0.2-1.8-0.5-2.6 c-0.3-0.8-0.8-1.6-1.5-2.3c-0.6-0.6-1.3-1.1-2.2-1.5c-0.8-0.3-1.7-0.5-2.6-0.5h-3.8h-0.5h-2.2v2.1v10.1V153.1z M71.4,176.5h2.2 h2.2H83c1.1,0,2.2-0.2,3.3-0.7c1.1-0.5,2-1.1,2.8-1.9c0.8-0.7,1.4-1.7,1.9-2.8c0.4-1.1,0.7-2.2,0.7-3.4c0-1.1-0.2-2.2-0.7-3.3 c-0.5-1.1-1.1-2.1-1.9-2.9c-0.8-0.8-1.7-1.5-2.7-1.9c-1.1-0.5-2.1-0.8-3.2-0.9c-1.2-0.1-2.3-0.1-3.3-0.1c-1.1,0-2.1,0-3.2,0.1 c-0.5,0-1,0-1.6,0c-0.5,0-1,0-1.5,0h-2.2v2.1v13.4V176.5z"/>
+      <polygon points="109.7,132.1 109.7,174.2 109.7,176.3 111.9,176.3 131.9,176.3 131.9,183 102.9,183 102.9,132.1"/>
+      <path d="M163.6,133.6c3,1.3,5.8,3.2,8.4,5.8c2.6,2.6,4.5,5.3,5.7,8.4c1.3,3.1,1.9,6.4,1.9,9.9 c0,3.6-0.6,6.9-1.9,9.9c-1.3,3-3.2,5.8-5.7,8.4c-2.5,2.5-5.3,4.4-8.4,5.7c-3.1,1.3-6.4,1.9-9.9,1.9c-3.6,0-6.9-0.6-9.9-1.9 c-3.1-1.3-5.8-3.2-8.4-5.7c-2.6-2.6-4.5-5.4-5.7-8.4c-1.3-3-1.9-6.3-1.9-9.9c0-3.6,0.6-6.9,1.9-9.9c1.2-3,3.1-5.8,5.7-8.4 c2.6-2.6,5.3-4.5,8.4-5.7c3-1.3,6.3-1.9,9.9-1.9C157.3,131.7,160.6,132.3,163.6,133.6 M146.4,140c-2.3,1-4.3,2.4-6.1,4.2 c-1.9,1.9-3.3,3.9-4.2,6.1c-0.9,2.2-1.4,4.7-1.4,7.3c0,2.6,0.5,5.1,1.4,7.3c0.9,2.2,2.3,4.3,4.2,6.1c1.8,1.8,3.8,3.2,6.1,4.1 c2.3,0.9,4.7,1.4,7.3,1.4c2.6,0,5-0.5,7.2-1.4c2.3-0.9,4.3-2.3,6.1-4.1c1.9-1.9,3.3-3.9,4.2-6.1c1-2.2,1.4-4.6,1.4-7.3 c0-2.6-0.5-5-1.4-7.3c-0.9-2.2-2.3-4.2-4.1-6.1c-1.8-1.8-3.900-3.2-6.2-4.2c-2.3-0.9-4.7-1.4-7.2-1.4 C151.1,138.6,148.7,139,146.4,140"/>
+      <polygon points="217.7,166.6 217.7,160.5 217.7,132 224.5,132 224.5,184 191.2,148.5 191.2,152.4 191.2,183.2 184.4,183.2 184.4,131.6"/>
+      <path d="M245.3,132.1c3.2,0.2,6.1,0.8,8.8,1.9c3.2,1.3,6,3.1,8.4,5.6l0,0c2.3,2.3,4,5,5.1,8.2 c1.1,3.2,1.7,6.5,1.7,9.8c0,3.4-0.6,6.7-1.7,9.8c-1.1,3.2-2.8,5.9-5.1,8.1l0,0c-2.4,2.4-5.2,4.3-8.4,5.5 c-3.2,1.3-6.6,1.9-10.2,1.9h-12.5v-50.9h12.5H245.3z M244,176.3c2.7,0,5.2-0.4,7.5-1.3c2.2-0.8,4.2-2.1,6-3.8 c1.7-1.8,3-3.8,3.8-6.1c0.8-2.2,1.3-4.8,1.3-7.5c0-2.7-0.4-5.2-1.3-7.5c-0.8-2.3-2.1-4.3-3.9-6c-1.7-1.7-3.7-3-6-3.9 c-2.3-0.8-4.8-1.3-7.5-1.3h-3.6h-2.2v2.1v33.2v2.1h2.2H244L244,176.3z"/>
+      <polygon points="314.2,118.7 283.5,176.3 286.3,176.3 314,176.3 314,183 272.1,183 302.6,125.4 298.1,125.4 64.7,125.4 64.7,118.7"/>
+      <path d="M119.9,191.4c4.6,1.9,8.9,4.9,12.9,8.9c3.9,3.9,6.9,8.2,8.8,12.9c2,4.7,3,9.8,3,15.3c0,5.5-1,10.6-3,15.3 c-1.9,4.7-4.9,9-8.8,12.9c-3.9,3.9-8.2,6.8-12.9,8.8c-4.7,1.9-9.8,2.9-15.2,2.9c-5.5,0-10.6-1-15.3-2.9c-4.7-1.9-9-4.8-12.9-8.8 c-4-3.9-6.9-8.2-8.8-12.9c-1.9-4.6-2.9-9.7-2.9-15.2c0-5.6,1-10.6,2.9-15.2c1.9-4.6,4.8-8.9,8.8-13c3.9-3.9,8.2-6.9,12.9-8.8 c4.6-1.9,9.7-2.9,15.3-2.9C110.3,188.5,115.3,189.4,119.9,191.4 M93.5,201.2c-3.6,1.5-6.7,3.7-9.4,6.4c-2.9,2.9-5,6-6.4,9.4 c-1.4,3.4-2.1,7.2-2.1,11.2c0,4.1,0.7,7.8,2.1,11.2c1.4,3.4,3.5,6.6,6.4,9.4c2.7,2.8,5.8,4.9,9.4,6.4c3.5,1.4,7.3,2.2,11.2,2.2 c3.9,0,7.7-0.7,11.1-2.2c3.5-1.4,6.6-3.6,9.4-6.4c2.9-2.9,5-6,6.4-9.4c1.5-3.4,2.2-7.1,2.2-11.2c0-4-0.7-7.7-2.2-11.2 c-1.4-3.4-3.6-6.5-6.4-9.4c-2.8-2.8-6-4.9-9.5-6.4c-3.5-1.4-7.2-2.2-11.1-2.2C100.7,199.1,97,199.8,93.5,201.2"/>
+      <polygon points="203.2,242.2 203.2,232.8 203.2,188.9 213.7,188.9 213.7,269 162.5,214.4 162.5,220.4 162.5,267.7 152,267.7 152,188.3"/>
+      <polygon points="234.8,189.1 234.8,253.9 234.8,257.2 238.1,257.2 268.9,257.2 268.9,267.5 224.3,267.5 224.3,189.1"/>
+      <polygon points="267.4,189.1 282,216.8 284.9,222.4 287.8,216.8 302.3,189.1 314.2,189.1 290.5,232.8 290.1,234.4 290.1,267.5 279.7,267.5 279.7,234.4 279.3,232.8 255.6,189.1"/>
+      <rect x="64.7" y="274.2" width="249.7" height="7.2"/>
+    </g>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.6l2.9 6 6.5.8-4.8 4.5 1.2 6.5L12 17.2l-5.8 3.2 1.2-6.5L2.6 9.4l6.5-.8z"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-sound-off" viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l4 6M21 9l-4 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-sound-on" viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z" fill="currentColor"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-caret" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="flag-us" viewBox="0 0 19 10"><path fill="#B22234" d="M0 0h19v10H0z"/><path stroke="#fff" stroke-width=".77" d="M0 1.15h19M0 2.69h19M0 4.23h19M0 5.77h19M0 7.31h19M0 8.85h19"/><path fill="#3C3B6E" d="M0 0h7.6v5.38H0z"/></symbol>
+    <symbol id="flag-eu" viewBox="0 0 30 20"><path fill="#003399" d="M0 0h30v20H0z"/><g fill="#FFCC00"><circle cx="15" cy="3.4" r=".95"/><circle cx="18.3" cy="4.28" r=".95"/><circle cx="20.72" cy="6.7" r=".95"/><circle cx="21.6" cy="10" r=".95"/><circle cx="20.72" cy="13.3" r=".95"/><circle cx="18.3" cy="15.72" r=".95"/><circle cx="15" cy="16.6" r=".95"/><circle cx="11.7" cy="15.72" r=".95"/><circle cx="9.28" cy="13.3" r=".95"/><circle cx="8.4" cy="10" r=".95"/><circle cx="9.28" cy="6.7" r=".95"/><circle cx="11.7" cy="4.28" r=".95"/></g></symbol>
+  </defs>
+</svg>
+
+<aside class="announce" aria-label="Shopper rating"><span class="js-announce">Rated 4.5 out of 5 by 350 shoppers on Amazon.</span> <a href="#reviews">See what they say</a></aside>
+
+<header class="site-header">
+  <a class="brand" href="#top" aria-label="Blondz Only, back to top">
+    <svg class="logo-box" viewBox="42.7 105.7 293.6 188.6" aria-hidden="true"><rect x="42.7" y="105.7" width="293.6" height="188.6" fill="#000"/><use href="#logo-letters" fill="#fff"/></svg>
+  </a>
+  <nav class="primary-nav" aria-label="Sections">
+    <a href="#shades">Shades</a>
+    <a href="#results">Results</a>
+    <a href="#how">How to use</a>
+    <a href="#reviews">Reviews</a>
   </nav>
+  <div class="header-actions">
+    <div class="region">
+      <button class="region-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="region-menu">
+        <svg class="flag" aria-hidden="true"><use class="js-region-flag" href="#flag-us"/></svg>
+        <span class="region-code js-region-code">US</span>
+        <span class="visually-hidden js-region-label">Store: United States. Change store</span>
+        <svg class="caret" aria-hidden="true"><use href="#i-caret"/></svg>
+      </button>
+      <ul class="region-menu" id="region-menu" role="menu" hidden>
+        <li role="none"><button type="button" role="menuitemradio" aria-checked="true" data-region="us" tabindex="-1"><svg class="flag" aria-hidden="true"><use href="#flag-us"/></svg>United States</button></li>
+        <li role="none"><button type="button" role="menuitemradio" aria-checked="false" data-region="eu" tabindex="-1"><svg class="flag" aria-hidden="true"><use href="#flag-eu"/></svg>Europe (Amazon UK)</button></li>
+      </ul>
+    </div>
+    <a class="btn btn-primary btn-sm js-buy" href="https://www.amazon.com/dp/B093TJ5RKK" target="_blank" rel="noopener"><span>Buy on Amazon<span class="eu-only"> UK</span><span class="visually-hidden js-buy-name">, Blonde Pearl</span></span></a>
+  </div>
 </header>
 
-<section class="hero">
-  <div class="hero-text">
-    <img class="hero-tiktok" src="images/tiktok-badge.png" alt="Viral #1 on TikTok">
-    <span class="eyebrow">Professional Blonde Care</span>
-    <h1>Keep your <em>pearl blonde</em> longer.</h1>
-    <p>Removes yellow and brassy tones from color-treated hair. Salon-quality toning with argan oil — drag to see the difference.</p>
-    <a href="#productos" class="cta">Shop the collection</a>
-  </div>
-  <div class="ba" id="ba">
-    <img src="images/hero-before.jpg" alt="Before">
-    <span class="lbl before">Before</span>
-    <div class="after-wrap" id="afterWrap">
-      <img src="images/hero-after.jpg" alt="After">
+<main id="main">
+
+  <!-- HERO: the before/after is the first thing you see -->
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="hero-title">
+      <h1 id="hero-title">Keep your <em class="js-word">pearl blonde</em> longer.</h1>
+      <img class="tiktok" src="images/tiktok-badge.webp" alt="The #1 viral toning mask on TikTok" width="180" height="180">
     </div>
-    <span class="lbl after">After</span>
-    <div class="divider" id="baDiv"></div>
-    <div class="handle" id="baHandle"><svg viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5V7zm8 0v10l5-5-5-5z"/></svg></div>
-  </div>
-</section>
 
-<section class="productos" id="productos">
-  <div class="sec-head">
-    <span class="eyebrow">Collection</span>
-    <h2>Our Products</h2>
-    <p>Available directly on Amazon, with fast and secure shipping.</p>
-  </div>
-  <div class="grid" id="grid"></div>
-</section>
+    <div class="hero-media">
+      <div class="ba" style="--pos:50%">
+        <!-- src/srcset are set by the inline script below, for the shade picked in <head> -->
+        <img class="ba-img ba-after" sizes="(max-width: 860px) 88vw, (max-width: 1280px) 50vw, 640px" width="1119" height="1600"
+             alt="" fetchpriority="high" draggable="false">
+        <img class="ba-img ba-before" sizes="(max-width: 860px) 88vw, (max-width: 1280px) 50vw, 640px" width="1119" height="1600"
+             alt="" draggable="false">
+        <noscript><img class="ba-img" src="assets/img/ba-blonde-pearl-after.webp" width="1119" height="1600" alt="After: soft ivory-pearl blonde"></noscript>
+        <span class="ba-tag ba-tag-before" aria-hidden="true">Before</span>
+        <span class="ba-tag ba-tag-after" aria-hidden="true">After</span>
+        <div class="ba-line">
+          <button class="ba-handle" type="button" role="slider" aria-label="Before and after comparison"
+                  aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="Half before, half after">
+            <svg aria-hidden="true"><use href="#i-chev"/></svg>
+          </button>
+        </div>
+      </div>
+      <p class="ba-note">Drag the line to compare. Results shown are illustrative.</p>
+    </div>
 
-<section class="beneficios" id="beneficios">
-  <div class="ben-grid">
-    <div><h3>Tones</h3><p>Targeted pigments that neutralize unwanted warmth and refine your color.</p></div>
-    <div><h3>Nourishes</h3><p>Argan oil that repairs and softens bleached or color-treated hair.</p></div>
-    <div><h3>Shines</h3><p>A luminous, professional salon finish in the comfort of your home.</p></div>
-  </div>
-</section>
+    <div class="hero-chips" role="group" aria-label="Choose your shade">
+      <button class="chip" type="button" data-shade="blonde-pearl" aria-pressed="true"><img src="assets/img/swatch-blonde-pearl.webp" alt="" width="120" height="120"><span class="chip-long">Blonde Pearl</span><span class="chip-short">Pearl</span></button>
+      <button class="chip" type="button" data-shade="icy-cool" aria-pressed="false"><img src="assets/img/swatch-icy-cool.webp" alt="" width="120" height="120"><span class="chip-long">Icy Cool</span><span class="chip-short">Icy</span></button>
+      <button class="chip" type="button" data-shade="silver-ash" aria-pressed="false"><img src="assets/img/swatch-silver-ash.webp" alt="" width="120" height="120"><span class="chip-long">Silver Ash</span><span class="chip-short">Silver</span></button>
+      <button class="chip" type="button" data-shade="irish-copper" aria-pressed="false"><img src="assets/img/swatch-irish-copper.webp" alt="" width="120" height="120"><span class="chip-long">Irish Copper</span><span class="chip-short">Copper</span></button>
+    </div>
 
-<footer>
-  <div class="logo"><img src="images/logo-white.png" alt="Blondz Only"></div>
-  <div class="social" id="social"></div>
-  <div class="copy">&copy; <span id="year"></span> Blondz Only. All rights reserved.</div>
+    <div class="hero-body">
+      <p class="lede js-desc">A purple toning mask that neutralizes yellow and brassy tones for a soft, luminous ivory-pearl blonde. With argan oil and biotin.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary js-buy" href="https://www.amazon.com/dp/B093TJ5RKK" target="_blank" rel="noopener"><span class="js-buy-label">Buy Blonde Pearl on Amazon</span></a>
+        <a class="link" href="#shades">Compare the four shades</a>
+      </div>
+      <p class="rating">
+        <span class="stars js-stars" aria-hidden="true"></span>
+        <span class="js-rating">4.5 out of 5 from 350 Amazon ratings</span>
+      </p>
+    </div>
+    <script>
+    /* Paint the hero in the picked shade right away (site.js takes over once it loads). */
+    (function () {
+      var C = window.BLONDZ, s = C.shades.filter(function (x) { return x.id === C.initShade; })[0] || C.shades[0];
+      ["before", "after"].forEach(function (side) {
+        var img = document.querySelector(".ba-" + side), f = "assets/img/ba-" + s.id + "-" + side;
+        img.srcset = f + "-sm.webp 720w, " + f + ".webp 1119w";
+        img.src = f + ".webp";
+        img.alt = s[side];
+      });
+      document.querySelector(".js-word").textContent = s.word;
+      document.querySelector(".js-desc").textContent = s.desc;
+    })();
+    </script>
+  </section>
+
+  <ul class="claims" aria-label="What is in every bottle">
+    <li><strong>Ultra high-purity pigments</strong><span>Neutralize yellow and brass, or revive copper</span></li>
+    <li><strong>Argan oil and biotin</strong><span>With pro-vitamin B5 to help soften</span></li>
+    <li><strong>Paraben-free, salt-free</strong><span>A tone-on-tone formula</span></li>
+    <li><strong>5 to 10 minutes</strong><span>On wet hair, in the shower</span></li>
+  </ul>
+
+  <!-- SHADES -->
+  <section class="sec shades" id="shades" aria-labelledby="shades-title">
+    <div class="wrap sec-head">
+      <h2 id="shades-title">Choose your shade</h2>
+      <p class="js-shades-intro">Every mask is 11.8 fl oz (350 ml), made with argan oil and biotin, and shipped by Amazon.</p>
+    </div>
+    <div class="wrap">
+      <div class="shelf js-shelf"></div>
+      <p class="swipe-hint" aria-hidden="true">Swipe to see all four</p>
+      <noscript>
+        <p><a href="https://www.amazon.com/dp/B093TJ5RKK">Blonde Pearl</a>, <a href="https://www.amazon.com/dp/B0G4S7XCQC">Icy Cool Blonde</a>, <a href="https://www.amazon.com/dp/B0CTJ6219V">Silver Ash Blonde</a> and <a href="https://www.amazon.com/dp/B0GML9TYMG">Irish Copper</a> are sold on Amazon.</p>
+        <p>In Europe, buy them on Amazon UK: <a href="https://www.amazon.co.uk/dp/B093TJ5RKK">Blonde Pearl</a>, <a href="https://www.amazon.co.uk/dp/B0G4S7XCQC">Icy Cool Blonde</a>, <a href="https://www.amazon.co.uk/dp/B0CTJ6219V">Silver Ash Blonde</a> and <a href="https://www.amazon.co.uk/dp/B0GML9TYMG">Irish Copper</a>.</p>
+      </noscript>
+    </div>
+  </section>
+
+  <!-- RESULTS VIDEOS -->
+  <section class="sec results" id="results" aria-labelledby="results-title">
+    <div class="wrap">
+      <div class="results-head">
+        <div>
+          <h2 id="results-title">See the change</h2>
+          <p class="sec-sub">Each film follows one shade on wet hair: the before, the mask going on, and the result.</p>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Shade">
+          <button class="tab" role="tab" type="button" id="tab-blonde-pearl" data-shade="blonde-pearl" aria-selected="true" aria-controls="player">Blonde Pearl</button>
+          <button class="tab" role="tab" type="button" id="tab-icy-cool" data-shade="icy-cool" aria-selected="false" aria-controls="player" tabindex="-1">Icy Cool</button>
+          <button class="tab" role="tab" type="button" id="tab-silver-ash" data-shade="silver-ash" aria-selected="false" aria-controls="player" tabindex="-1">Silver Ash</button>
+          <button class="tab" role="tab" type="button" id="tab-irish-copper" data-shade="irish-copper" aria-selected="false" aria-controls="player" tabindex="-1">Irish Copper</button>
+        </div>
+      </div>
+      <figure class="player" id="player" role="tabpanel" aria-labelledby="tab-blonde-pearl">
+        <video class="js-watch" muted playsinline loop preload="none"
+               data-poster="assets/poster/salon-blonde-pearl-169.webp" aria-label="Blonde Pearl before and after film"></video>
+        <div class="player-ctl">
+          <button class="icon-btn js-sound" type="button" aria-label="Turn sound on" aria-pressed="false"><svg aria-hidden="true"><use href="#i-sound-off"/></svg></button>
+          <button class="icon-btn js-pause" type="button" aria-label="Pause video" aria-pressed="false"><svg aria-hidden="true"><use href="#i-pause"/></svg></button>
+        </div>
+      </figure>
+      <p class="fine">Results shown are illustrative. Your result depends on your starting color, how porous your hair is and how long you leave the mask on.</p>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="benefits" aria-labelledby="benefits-title">
+    <h2 id="benefits-title" class="visually-hidden">What the mask does</h2>
+    <div class="wrap benefit-words">
+      <div><h3>Tones</h3><p>Ultra high-purity pigments neutralize yellow, orange and brassy tones, tone on tone.</p></div>
+      <div><h3>Nourishes</h3><p>Argan oil, biotin and pro-vitamin B5 help hydrate and soften color-treated hair.</p></div>
+      <div><h3>Shines</h3><p>A salon-style finish at home, from a formula that is paraben-free and salt-free.</p></div>
+    </div>
+    <div class="band-video">
+      <video class="js-band" muted playsinline loop preload="none" aria-hidden="true" tabindex="-1"
+             data-poster="assets/poster/band-four-shades-169.webp"
+             data-src-wide="assets/video/band-four-shades-169.mp4" data-src-tall="assets/video/band-four-shades-916.mp4"
+             data-poster-tall="assets/poster/band-four-shades-916.webp"></video>
+      <button class="icon-btn loop-toggle" type="button" aria-label="Pause video" aria-pressed="false"><svg aria-hidden="true"><use href="#i-pause"/></svg></button>
+    </div>
+  </section>
+
+  <!-- HOW TO USE -->
+  <section class="sec how" id="how" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="sec-head sec-head--single">
+        <h2 id="how-title">How to use it</h2>
+        <p class="sec-sub">Use it after shampooing, whenever brass shows up or your copper starts to fade.</p>
+      </div>
+      <ol class="steps">
+        <li class="step">
+          <figure><img class="js-step" data-n="1" src="assets/img/step-blonde-pearl-1.webp" alt="Squeezing the mask into a gloved palm" width="720" height="900" loading="lazy"></figure>
+          <span class="step-n" aria-hidden="true">1</span>
+          <h3>Shampoo, then squeeze</h3>
+          <p>Wash your hair as usual and rinse. Squeeze a generous amount of mask into your palm.</p>
+        </li>
+        <li class="step">
+          <figure><img class="js-step" data-n="2" src="assets/img/step-blonde-pearl-2.webp" alt="Working the mask through damp hair" width="720" height="900" loading="lazy"></figure>
+          <span class="step-n" aria-hidden="true">2</span>
+          <h3>Apply and wait</h3>
+          <p>Work it through damp hair from roots to ends. Leave it on for 5 to 10 minutes. Icy Cool Blonde can stay up to 15.</p>
+        </li>
+        <li class="step">
+          <figure><img class="js-step" data-n="3" src="assets/img/step-blonde-pearl-3.webp" alt="Hair after rinsing" width="720" height="900" loading="lazy"></figure>
+          <span class="step-n" aria-hidden="true">3</span>
+          <h3>Rinse</h3>
+          <p>Rinse well. The longer you leave it on, the more intense the tone.</p>
+        </li>
+      </ol>
+      <p class="tip"><strong>First time?</strong> Very light, platinum and gray hair takes pigment fast. Start with 5 minutes and add time on your next wash if you want a stronger result.</p>
+    </div>
+  </section>
+
+  <!-- REELS -->
+  <section class="sec reels" id="feed" aria-labelledby="feed-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="feed-title">From our feed</h2>
+        <p>Fifteen seconds for each shade. Follow <a class="link" href="https://www.instagram.com/blondzonlyus/" target="_blank" rel="noopener">@blondzonlyus</a> on Instagram and <a class="link" href="https://www.tiktok.com/@blondzonlyus" target="_blank" rel="noopener">TikTok</a>.</p>
+      </div>
+      <div class="reel-row">
+        <figure class="reel" data-shade="blonde-pearl">
+          <div class="reel-media">
+            <video muted playsinline loop preload="none" data-poster="assets/poster/motion-blonde-pearl.webp" data-src="assets/video/motion-blonde-pearl.mp4" aria-label="Blonde Pearl, 15-second spot"></video>
+            <button class="icon-btn loop-toggle" type="button" aria-label="Pause video" aria-pressed="false"><svg aria-hidden="true"><use href="#i-pause"/></svg></button>
+            <button class="icon-btn reel-sound" type="button" aria-label="Turn sound on" aria-pressed="false"><svg aria-hidden="true"><use href="#i-sound-off"/></svg></button>
+          </div>
+          <figcaption><span>Blonde Pearl</span><a href="https://www.amazon.com/dp/B093TJ5RKK" target="_blank" rel="noopener">Buy on Amazon</a></figcaption>
+        </figure>
+        <figure class="reel" data-shade="icy-cool">
+          <div class="reel-media">
+            <video muted playsinline loop preload="none" data-poster="assets/poster/motion-icy-cool.webp" data-src="assets/video/motion-icy-cool.mp4" aria-label="Icy Cool Blonde, 15-second spot"></video>
+            <button class="icon-btn loop-toggle" type="button" aria-label="Pause video" aria-pressed="false"><svg aria-hidden="true"><use href="#i-pause"/></svg></button>
+            <button class="icon-btn reel-sound" type="button" aria-label="Turn sound on" aria-pressed="false"><svg aria-hidden="true"><use href="#i-sound-off"/></svg></button>
+          </div>
+          <figcaption><span>Icy Cool Blonde</span><a href="https://www.amazon.com/dp/B0G4S7XCQC" target="_blank" rel="noopener">Buy on Amazon</a></figcaption>
+        </figure>
+        <figure class="reel" data-shade="silver-ash">
+          <div class="reel-media">
+            <video muted playsinline loop preload="none" data-poster="assets/poster/motion-silver-ash.webp" data-src="assets/video/motion-silver-ash.mp4" aria-label="Silver Ash Blonde, 15-second spot"></video>
+            <button class="icon-btn loop-toggle" type="button" aria-label="Pause video" aria-pressed="false"><svg aria-hidden="true"><use href="#i-pause"/></svg></button>
+            <button class="icon-btn reel-sound" type="button" aria-label="Turn sound on" aria-pressed="false"><svg aria-hidden="true"><use href="#i-sound-off"/></svg></button>
+          </div>
+          <figcaption><span>Silver Ash Blonde</span><a href="https://www.amazon.com/dp/B0CTJ6219V" target="_blank" rel="noopener">Buy on Amazon</a></figcaption>
+        </figure>
+        <figure class="reel" data-shade="irish-copper">
+          <div class="reel-media">
+            <video muted playsinline loop preload="none" data-poster="assets/poster/motion-irish-copper.webp" data-src="assets/video/motion-irish-copper.mp4" aria-label="Irish Copper, 15-second spot"></video>
+            <button class="icon-btn loop-toggle" type="button" aria-label="Pause video" aria-pressed="false"><svg aria-hidden="true"><use href="#i-pause"/></svg></button>
+            <button class="icon-btn reel-sound" type="button" aria-label="Turn sound on" aria-pressed="false"><svg aria-hidden="true"><use href="#i-sound-off"/></svg></button>
+          </div>
+          <figcaption><span>Irish Copper</span><a href="https://www.amazon.com/dp/B0GML9TYMG" target="_blank" rel="noopener">Buy on Amazon</a></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="sec reviews-sec" id="reviews" aria-labelledby="reviews-title">
+    <div class="wrap reviews">
+      <div class="score">
+        <h2 id="reviews-title" class="score-label">What shoppers say on <span class="js-store">Amazon</span></h2>
+        <p class="score-num js-score">4.5</p>
+        <p class="stars stars--lg js-stars" aria-hidden="true"></p>
+        <p class="score-meta js-score-meta">out of 5, from 350 ratings for the four masks (October 2026)</p>
+      </div>
+      <div class="bars js-bars" role="group" aria-label="Rating breakdown"></div>
+      <div class="themes">
+        <h3>What reviewers mention most</h3>
+        <ul>
+          <li>Yellow and brass gone in about five minutes</li>
+          <li>Hair feels soft after rinsing</li>
+          <li>Works on gray and white hair that has turned yellow</li>
+          <li>Takes out the orange left behind by bleach</li>
+          <li>Very pigmented, so a short first try is enough</li>
+        </ul>
+        <a class="link js-reviews" href="https://www.amazon.com/dp/B093TJ5RKK#customerReviews" target="_blank" rel="noopener">Read the reviews on Amazon</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILM (near the end, as the owner asked) -->
+  <section class="film" id="film" aria-labelledby="film-title">
+    <div class="film-copy">
+      <p class="film-kicker">A Blondz Only short film</p>
+      <h2 id="film-title">The Blonde Conspiracy</h2>
+      <p>Maya's blonde keeps turning brassy, and every blonde in the café seems to know something she doesn't. Sixty-six seconds, best with sound on.</p>
+      <button class="btn btn-light js-film-start" type="button"><svg aria-hidden="true"><use href="#i-play"/></svg>Play the film</button>
+    </div>
+    <figure class="film-frame">
+      <video class="js-film" playsinline preload="none" data-poster="assets/poster/film-alt.webp" data-src="assets/video/blonde-conspiracy-en.mp4" aria-label="The Blonde Conspiracy, short film">
+        <track kind="captions" srclang="en" label="English" src="assets/video/blonde-conspiracy-en.vtt">
+      </video>
+      <button class="film-play js-film-start" type="button" aria-label="Play The Blonde Conspiracy"><svg aria-hidden="true"><use href="#i-play"/></svg></button>
+    </figure>
+  </section>
+
+  <!-- FAQ -->
+  <section class="sec faq-sec" id="faq" aria-labelledby="faq-title">
+    <div class="wrap faq">
+      <h2 id="faq-title">Questions</h2>
+      <div class="faq-list">
+        <details>
+          <summary>Which shade is right for me?</summary>
+          <div class="faq-a">
+            <p><strong>Blonde Pearl</strong> for highlighted or bleached blondes that turn yellow or brassy and want a warm ivory-pearl blonde. <strong>Icy Cool Blonde</strong> for very light blonde, platinum and yellowed gray hair. <strong>Silver Ash Blonde</strong> for highlights that turn orange and should look cool and ashy. <strong>Irish Copper</strong> for red and copper hair that has faded.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Will it turn my hair purple or blue?</summary>
+          <div class="faq-a">
+            <p>The pigments are strong. Very light, porous or gray hair can pick up a cool tint if the mask stays on too long. Start with 5 minutes, and if you see a tint, it usually softens with your next wash.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Can I use it on gray hair?</summary>
+          <div class="faq-a">
+            <p>Yes. Icy Cool Blonde is made for gray and white hair that has turned yellow. Shoppers also use Silver Ash Blonde on highlights while their gray grows in.</p>
+          </div>
+        </details>
+        <details>
+          <summary>How long do I leave it on?</summary>
+          <div class="faq-a">
+            <p>5 to 10 minutes on damp hair after shampooing. Icy Cool Blonde can stay up to 15 minutes. Longer gives a more intense tone.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Is Irish Copper a toner?</summary>
+          <div class="faq-a">
+            <p>No. Irish Copper is a color-depositing mask for red, copper, auburn and mahogany hair. It revives faded copper tones and is not meant for blonde hair.</p>
+          </div>
+        </details>
+        <details>
+          <summary>What is in it?</summary>
+          <div class="faq-a">
+            <p>Ultra high-purity pigments, argan oil, biotin and pro-vitamin B5. The formula is paraben-free and salt-free.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Where can I buy it?</summary>
+          <div class="faq-a">
+            <p>On Amazon in the United States, and on Amazon UK for shoppers in Europe. Use the flag at the top of the page to switch stores. Check the product page for current coupons.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="sec final" aria-labelledby="final-title">
+    <div class="wrap">
+      <div class="lineup">
+        <a class="lineup-item" data-shade="blonde-pearl" href="https://www.amazon.com/dp/B093TJ5RKK" target="_blank" rel="noopener"><img src="assets/img/bottle-blonde-pearl-740.webp" srcset="assets/img/bottle-blonde-pearl-560.webp 169w, assets/img/bottle-blonde-pearl-740.webp 223w, assets/img/bottle-blonde-pearl.webp 331w" sizes="(max-width: 860px) 49px, 94px" alt="" width="331" height="1100" loading="lazy"><span>Blonde Pearl</span></a>
+        <a class="lineup-item" data-shade="icy-cool" href="https://www.amazon.com/dp/B0G4S7XCQC" target="_blank" rel="noopener"><img src="assets/img/bottle-icy-cool-740.webp" srcset="assets/img/bottle-icy-cool-560.webp 182w, assets/img/bottle-icy-cool-740.webp 240w, assets/img/bottle-icy-cool.webp 357w" sizes="(max-width: 860px) 49px, 94px" alt="" width="357" height="1100" loading="lazy"><span>Icy Cool Blonde</span></a>
+        <a class="lineup-item" data-shade="silver-ash" href="https://www.amazon.com/dp/B0CTJ6219V" target="_blank" rel="noopener"><img src="assets/img/bottle-silver-ash-740.webp" srcset="assets/img/bottle-silver-ash-560.webp 180w, assets/img/bottle-silver-ash-740.webp 238w, assets/img/bottle-silver-ash.webp 354w" sizes="(max-width: 860px) 49px, 94px" alt="" width="354" height="1100" loading="lazy"><span>Silver Ash Blonde</span></a>
+        <a class="lineup-item" data-shade="irish-copper" href="https://www.amazon.com/dp/B0GML9TYMG" target="_blank" rel="noopener"><img src="assets/img/bottle-irish-copper-740.webp" srcset="assets/img/bottle-irish-copper-560.webp 181w, assets/img/bottle-irish-copper-740.webp 239w, assets/img/bottle-irish-copper.webp 356w" sizes="(max-width: 860px) 49px, 94px" alt="" width="356" height="1100" loading="lazy"><span>Irish Copper</span></a>
+      </div>
+      <h2 id="final-title">Available on <span class="js-store">Amazon</span></h2>
+      <p class="sec-sub">Four shades, one size, made with argan oil and biotin.</p>
+      <a class="btn btn-primary js-buy" href="https://www.amazon.com/dp/B093TJ5RKK" target="_blank" rel="noopener"><span class="js-buy-label">Buy Blonde Pearl on Amazon</span></a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="foot-top">
+    <svg class="footer-logo" viewBox="62 116 255 168" role="img" aria-label="Blondz Only"><use href="#logo-letters" fill="currentColor"/></svg>
+    <nav class="foot-links" aria-label="Follow Blondz Only">
+      <a href="https://www.instagram.com/blondzonlyus/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@blondzonlyus" target="_blank" rel="noopener">TikTok</a>
+      <a class="js-buy" href="https://www.amazon.com/dp/B093TJ5RKK" target="_blank" rel="noopener"><span class="js-store">Amazon</span></a>
+    </nav>
+  </div>
+  <div class="foot-row">
+    <p class="foot-note">Before-and-after images and videos are illustrative. Individual results vary.</p>
+    <p class="foot-copy">&copy; <span class="js-year">2026</span> Blondz Only</p>
+  </div>
 </footer>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+<aside class="buybar" aria-label="Quick buy" aria-hidden="true">
+  <img class="js-buybar-swatch" src="assets/img/swatch-blonde-pearl.webp" alt="" width="120" height="120">
+  <p class="buybar-meta"><strong class="js-buybar-name">Blonde Pearl</strong><span class="js-buybar-price">$16.90, 11.8 fl oz</span></p>
+  <a class="btn btn-primary js-buy" href="https://www.amazon.com/dp/B093TJ5RKK" target="_blank" rel="noopener" tabindex="-1"><span>Buy on Amazon<span class="visually-hidden js-buy-name">, Blonde Pearl</span></span></a>
+</aside>
 
-  /* ---------- Before/After slider ---------- */
-  (function(){
-    const ba = document.getElementById('ba');
-    const wrap = document.getElementById('afterWrap');
-    const div = document.getElementById('baDiv');
-    const handle = document.getElementById('baHandle');
-    const afterImg = wrap.querySelector('img');
-    let dragging = false;
+<dialog class="lightbox" aria-labelledby="lb-title">
+  <div class="lb-top">
+    <p id="lb-title" class="lb-title"></p>
+    <button class="icon-btn icon-btn--ink js-lb-close" type="button" aria-label="Close photos"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="lb-track" tabindex="0" role="group" aria-label="Product photos"></div>
+  <p class="lb-note">Before-and-after photos are illustrative.</p>
+  <div class="lb-bottom">
+    <button class="icon-btn icon-btn--ink js-lb-prev" type="button" aria-label="Previous photo"><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+    <p class="lb-count" aria-live="polite"></p>
+    <button class="icon-btn icon-btn--ink js-lb-next lb-next" type="button" aria-label="Next photo"><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+  </div>
+</dialog>
 
-    function setPos(clientX){
-      const r = ba.getBoundingClientRect();
-      let x = clientX - r.left;
-      x = Math.max(0, Math.min(x, r.width));
-      const pct = (x / r.width) * 100;
-      wrap.style.width = pct + '%';
-      div.style.left = pct + '%';
-      handle.style.left = pct + '%';
-      // mantener la imagen "after" alineada con el contenedor real
-      afterImg.style.width = r.width + 'px';
-    }
-    function start(e){ dragging = true; move(e); }
-    function move(e){
-      if(!dragging) return;
-      const cx = e.touches ? e.touches[0].clientX : e.clientX;
-      setPos(cx);
-      if(e.cancelable) e.preventDefault();
-    }
-    function end(){ dragging = false; }
-
-    ba.addEventListener('mousedown', start);
-    window.addEventListener('mousemove', move);
-    window.addEventListener('mouseup', end);
-    ba.addEventListener('touchstart', start, {passive:false});
-    window.addEventListener('touchmove', move, {passive:false});
-    window.addEventListener('touchend', end);
-    window.addEventListener('resize', () => {
-      const r = ba.getBoundingClientRect();
-      afterImg.style.width = r.width + 'px';
-    });
-    // init al 50%
-    window.addEventListener('load', () => {
-      const r = ba.getBoundingClientRect();
-      afterImg.style.width = r.width + 'px';
-    });
-  })();
-
-  /* ---------- Product gallery ---------- */
-  const cartIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>';
-  const starSVG = '<svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
-  const starsHTML = '<div class="stars">' + starSVG.repeat(5) + '</div>';
-  const grid = document.getElementById('grid');
-  PRODUCTS.forEach((p, idx) => {
-    const priceHTML = p.price ? `<div class="precio">${p.price}</div>` : '';
-    const thumbs = p.images.map((src, i) =>
-      `<button class="thumb${i===0?' active':''}" onclick="setMain(${idx},${i})"><img src="${src}" alt="${p.name} ${i+1}" loading="lazy"></button>`
-    ).join('');
-    grid.insertAdjacentHTML('beforeend', `
-      <article class="card" id="card-${idx}">
-        <div class="foto">
-          <img src="${p.images[0]}" alt="${p.name}">
-        </div>
-        <div class="thumbs">${thumbs}</div>
-        <div class="body">
-          <h3>${p.name}</h3>
-          ${starsHTML}
-          <p class="desc">${p.desc}</p>
-          ${priceHTML}
-          <a class="buy" href="${p.amazon}" target="_blank" rel="noopener">${cartIcon}${CONFIG.buttonText}</a>
-        </div>
-      </article>
-    `);
-  });
-  function setMain(pi, ii){
-    const card = document.getElementById('card-'+pi);
-    const main = card.querySelector('.foto img');
-    main.style.opacity = 0;
-    setTimeout(() => { main.src = PRODUCTS[pi].images[ii]; main.style.opacity = 1; }, 120);
-    card.querySelectorAll('.thumb').forEach((t,i) => t.classList.toggle('active', i===ii));
-  }
-
-  const social = document.getElementById('social');
-  if (CONFIG.instagram) social.insertAdjacentHTML('beforeend', `<a href="${CONFIG.instagram}" target="_blank" rel="noopener">Instagram</a>`);
-  if (CONFIG.whatsapp) {
-    const wa = document.createElement('a');
-    wa.className='wa'; wa.href='https://wa.me/'+CONFIG.whatsapp; wa.target='_blank'; wa.rel='noopener';
-    wa.innerHTML='<svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.82 9.82 0 0 0 1.51 5.26l-.999 3.648 3.978-1.044z"/></svg>';
-    document.body.appendChild(wa);
-  }
-</script>
-
+<script src="assets/js/site.js" defer fetchpriority="high"></script>
 </body>
 </html>
