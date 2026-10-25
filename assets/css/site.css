@@ -429,6 +429,12 @@ h1 em.is-out { opacity: 0; transform: translateY(.14em); }
 .lineup-item:hover img { transform: translateY(-6px); }
 .lineup-item:hover span { color: var(--violet); }
 .final .sec-sub { margin: 16px auto 32px; }
+.final { position: relative; }
+.designed-in { display: inline-flex; align-items: center; gap: 10px; margin-top: 30px; font-size: 12px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); }
+.flag-uk { width: 24px; height: 12px; flex: none; box-shadow: 0 0 0 1px rgba(36, 27, 47, .12); }
+@media (min-width: 861px) {
+  .designed-in { position: absolute; right: max(var(--gutter), calc((100vw - var(--max)) / 2 + var(--gutter))); bottom: 36px; margin: 0; }
+}
 
 /* ---------- footer ---------- */
 .site-footer { background: var(--night); color: #B9B1C4; padding: clamp(48px, 6vw, 72px) var(--gutter) calc(32px + env(safe-area-inset-bottom)); }
