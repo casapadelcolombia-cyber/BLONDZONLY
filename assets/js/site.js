@@ -612,7 +612,7 @@
     const row = $(".js-rc-row", rcBox);
     row.innerHTML = C.reviews.map((rv) => `
       <article class="rc" role="listitem">
-        <div class="rc-who"><span class="rc-avatar" aria-hidden="true">${esc(String(rv.name).trim().charAt(0))}</span>
+        <div class="rc-who"><span class="rc-avatar" aria-hidden="true">${rv.photo ? `<img src="${esc(rv.photo)}" alt="" width="80" height="80" loading="lazy">` : esc(String(rv.name).trim().charAt(0))}</span>
           <span class="rc-name">${esc(rv.name)}<svg class="rc-check" role="img" aria-label="Verified purchase"><use href="#i-verified"/></svg></span></div>
         <p class="stars rc-stars" role="img" aria-label="${esc(rv.stars)} out of 5 stars">${starsHTML(rv.stars)}</p>
         ${rv.title ? `<h4 class="rc-heading">${esc(rv.title)}</h4>` : ""}
