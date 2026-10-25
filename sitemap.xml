@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://www.blondzonly.com/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <image:image><image:loc>https://www.blondzonly.com/images/blonde-pearl.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.blondzonly.com/images/icy-cool-blonde.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.blondzonly.com/images/silver-ash-blonde.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.blondzonly.com/images/irish-copper.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.blondzonly.com/assets/img/bottle-blonde-pearl.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.blondzonly.com/assets/img/bottle-icy-cool.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.blondzonly.com/assets/img/bottle-silver-ash.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.blondzonly.com/assets/img/bottle-irish-copper.webp</image:loc></image:image>
+    <video:video>
+      <video:thumbnail_loc>https://www.blondzonly.com/assets/poster/film-alt.webp</video:thumbnail_loc>
+      <video:title>The Blonde Conspiracy</video:title>
+      <video:description>A Blondz Only short film. Maya's blonde keeps turning brassy, and every blonde in the café seems to know something she doesn't.</video:description>
+      <video:content_loc>https://www.blondzonly.com/assets/video/blonde-conspiracy-en.mp4</video:content_loc>
+      <video:duration>66</video:duration>
+      <video:publication_date>2026-10-24T23:07:58-05:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>no</video:live>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://www.blondzonly.com/assets/poster/salon-blonde-pearl-169.webp</video:thumbnail_loc>
+      <video:title>Blonde Pearl before and after film (illustrative)</video:title>
+      <video:description>Illustrative film of Blonde Pearl on wet hair: long hair with brassy, orange tones, the purple toning mask going on, and a soft ivory-pearl blonde. Results shown are illustrative.</video:description>
+      <video:content_loc>https://www.blondzonly.com/assets/video/salon-blonde-pearl-169.mp4</video:content_loc>
+      <video:duration>13</video:duration>
+      <video:publication_date>2026-10-24T23:07:58-05:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://www.blondzonly.com/assets/poster/salon-icy-cool-169.webp</video:thumbnail_loc>
+      <video:title>Icy Cool Blonde before and after film (illustrative)</video:title>
+      <video:description>Illustrative film of Icy Cool Blonde on wet hair: platinum hair with yellow tones, the purple toning mask going on, and a bright, icy platinum blonde. Results shown are illustrative.</video:description>
+      <video:content_loc>https://www.blondzonly.com/assets/video/salon-icy-cool-169.mp4</video:content_loc>
+      <video:duration>15</video:duration>
+      <video:publication_date>2026-10-24T23:07:58-05:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://www.blondzonly.com/assets/poster/salon-silver-ash-169.webp</video:thumbnail_loc>
+      <video:title>Silver Ash Blonde before and after film (illustrative)</video:title>
+      <video:description>Illustrative film of Silver Ash Blonde on wet hair: long hair with orange, brassy reflections, the blue-violet toning mask going on, and a cool silver-ash blonde. Results shown are illustrative.</video:description>
+      <video:content_loc>https://www.blondzonly.com/assets/video/salon-silver-ash-169.mp4</video:content_loc>
+      <video:duration>14</video:duration>
+      <video:publication_date>2026-10-24T23:07:58-05:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://www.blondzonly.com/assets/poster/salon-irish-copper-169.webp</video:thumbnail_loc>
+      <video:title>Irish Copper before and after film (illustrative)</video:title>
+      <video:description>Illustrative film of Irish Copper on wet hair: faded, dull copper hair, the color-depositing mask going on, and a rich, vivid copper. Results shown are illustrative.</video:description>
+      <video:content_loc>https://www.blondzonly.com/assets/video/salon-irish-copper-169.mp4</video:content_loc>
+      <video:duration>14</video:duration>
+      <video:publication_date>2026-10-24T23:07:58-05:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+</urlset>

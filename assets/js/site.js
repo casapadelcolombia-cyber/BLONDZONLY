@@ -48,8 +48,6 @@
 
   /* ---------- shelf ---------- */
   const shelf = $(".js-shelf");
-  // Irish Copper deposits color; the other three tone.
-  const kind = (s) => (s.id === "irish-copper" ? "color-depositing" : "toning");
   const bottleSet = (s) => [560, 740].map((h) => `assets/img/bottle-${s.id}-${h}.webp ${Math.round((s.bottleWidth * h) / 1100)}w`)
     .concat(`assets/img/bottle-${s.id}.webp ${s.bottleWidth}w`).join(", ");
   const fineHover = matchMedia("(hover: hover) and (pointer: fine)").matches;
@@ -61,11 +59,11 @@
       <article class="shade-col${s.id === current ? " is-active" : ""}" data-shade="${s.id}" style="--tint:${s.tint};--accent:${s.accent}">
         <p class="shade-pack">${s.pack}</p>
         <button class="shade-figure" type="button" data-photos="${s.id}" aria-label="See photos of ${s.name}">
-          <img class="shade-bottle" src="assets/img/bottle-${s.id}-740.webp" srcset="${bottleSet(s)}" sizes="(max-width: 860px) 97px, 117px" alt="${s.name} ${kind(s)} mask, ${reg.size} bottle" width="${s.bottleWidth}" height="1100" loading="lazy">
+          <img class="shade-bottle" src="assets/img/bottle-${s.id}-740.webp" srcset="${bottleSet(s)}" sizes="(max-width: 860px) 97px, 117px" alt="${s.name} ${s.kicker.toLowerCase()}, ${reg.size} bottle" width="${s.bottleWidth}" height="1100" loading="lazy">
         </button>
         <h3 class="shade-name">${s.name}</h3>
         <p class="shade-line">${s.line}</p>
-        <p class="shade-rating"><span class="stars" aria-hidden="true">${starsHTML(reg.rating.value)}</span><span>${reg.rating.value} <span class="shade-count">(${reg.rating.count})</span></span><span class="visually-hidden">out of 5 stars from ${reg.rating.count} ratings on ${reg.store}</span></p>
+        <p class="shade-rating"><span class="stars" aria-hidden="true">${starsHTML(reg.rating.value)}</span><span>${reg.rating.value} <span class="shade-count">(${reg.rating.count})</span></span><span class="visually-hidden">out of 5 stars from ${reg.rating.count} ratings on ${reg.rating.source || reg.store}</span></p>
         <p class="shade-for">${s.forWhom}</p>
         <div class="shade-price"><strong>${s.price[region]}</strong><span>${reg.size}</span></div>
         <div class="shade-actions">
@@ -103,10 +101,11 @@
   function applyRegion() {
     const reg = R();
     const r = reg.rating;
+    const src = r.source || reg.store; // where the ratings are counted (global Amazon for Europe)
     document.documentElement.dataset.region = region;
     $$(".js-stars").forEach((el) => (el.innerHTML = starsHTML(r.value)));
-    $$(".js-rating").forEach((el) => (el.textContent = `${r.value} out of 5 from ${r.count} ${reg.store} ratings`));
-    $$(".js-announce").forEach((el) => (el.textContent = `Rated ${r.value} out of 5 by ${r.count} shoppers on ${reg.store}.`));
+    $$(".js-rating").forEach((el) => (el.textContent = `${r.value} out of 5 from ${r.count} ${src} ratings`));
+    $$(".js-announce").forEach((el) => (el.textContent = `Rated ${r.value} out of 5 by ${r.count} shoppers on ${src}.`));
     $$(".js-score").forEach((el) => (el.textContent = r.value));
     $$(".js-score-meta").forEach((el) => (el.textContent = `out of 5, from ${r.count} ratings for the four masks (${r.checked})`));
     $$(".js-reviews").forEach((el) => {
@@ -114,6 +113,7 @@
       el.textContent = `Read the reviews on ${reg.store}`;
     });
     $$(".js-store").forEach((el) => (el.textContent = reg.store));
+    $$(".js-rating-source").forEach((el) => (el.textContent = src));
     $$(".js-shades-intro").forEach((el) => (el.textContent = `Every mask is ${reg.size}, made with argan oil and biotin, and ${reg.shipping}.`));
     const bars = $(".js-bars");
     if (bars) {
@@ -332,6 +332,7 @@
   /* ---------- shade state ---------- */
   const STEP_ALT = ["mask squeezed into a gloved palm", "mask worked through damp hair", "hair after rinsing"];
   const word = $(".js-word");
+  const kicker = $(".js-kicker");
   const desc = $(".js-desc");
 
   function swapText(el, text, instant) {
@@ -361,6 +362,7 @@
 
     $$(".chip").forEach((c) => c.setAttribute("aria-pressed", String(c.dataset.shade === id)));
     swapText(word, s.word, instant);
+    if (kicker) kicker.textContent = s.kicker;
     swapText(desc, s.desc, instant);
     $$(".js-buy").forEach((a) => (a.href = s.amazon[region]));
     $$(".js-buy-label").forEach((el) => (el.textContent = `Buy ${s.name} on ${reg.store}`));

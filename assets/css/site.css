@@ -49,6 +49,11 @@ a { color: inherit; }
 button { font: inherit; color: inherit; }
 p { margin: 0; }
 h1, h2, h3 { font-family: var(--f-display); font-weight: 400; margin: 0; letter-spacing: -0.015em; text-wrap: balance; }
+/* Bodoni Moda picks opsz 96 at display sizes and its hairlines drop under a pixel on screen (the A's left stroke vanishes);
+   capping the optical size keeps them crisp */
+h3, .claims strong, .shade-name, .shade-line, .reel figcaption span, .themes li, .faq-list summary, .lb-title, .lineup-item span {
+  font-optical-sizing: none; font-variation-settings: "opsz" 12; }
+h1, h2, .step-n, .benefit-words h3 { font-optical-sizing: none; font-variation-settings: "opsz" 20; }
 p, li { text-wrap: pretty; }
 h2 { font-size: clamp(36px, 4.6vw, 68px); line-height: 1.02; }
 h3 { font-size: clamp(23px, 2vw, 29px); line-height: 1.12; }
@@ -171,6 +176,7 @@ strong { font-weight: 500; }
 .hero-media { grid-area: media; position: relative; display: flex; flex-direction: column; min-height: 0; background: var(--white); }
 
 h1 { font-size: clamp(46px, 5.4vw, 92px); line-height: .95; letter-spacing: -0.028em; }
+.hero-kicker { font-size: 13px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 18px; }
 /* the shade word gets its own line, so every shade keeps the same three-line H1 (no jump, no collision with the badge) */
 h1 em { font-style: italic; display: block; transition: opacity .28s var(--ease), transform .28s var(--ease); }
 h1 em.is-out { opacity: 0; transform: translateY(.14em); }
@@ -334,7 +340,9 @@ h1 em.is-out { opacity: 0; transform: translateY(.14em); }
 .reviews-sec { border-top: 1px solid var(--line); }
 .reviews { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr) minmax(0, 1.4fr); gap: clamp(36px, 5vw, 88px); align-items: start; }
 .score-label { font-size: clamp(30px, 3vw, 44px); line-height: 1.05; }
-.score-num { font-family: var(--f-display); font-size: clamp(110px, 12vw, 176px); line-height: .82; letter-spacing: -0.045em; margin-top: 28px; }
+/* at this size the automatic optical size (opsz 96) makes the hairlines vanish; a text optical size keeps them visible */
+.score-num { font-family: var(--f-display); font-size: clamp(110px, 12vw, 176px); line-height: .82; letter-spacing: -0.045em; margin-top: 28px;
+  font-weight: 500; font-optical-sizing: none; font-variation-settings: "opsz" 18; }
 .stars--lg { margin-top: 18px; }
 .stars--lg svg { width: 22px; height: 22px; }
 .score-meta { color: var(--ink-2); font-size: 14.5px; margin-top: 12px; max-width: 26ch; }
@@ -458,6 +466,7 @@ h1 em.is-out { opacity: 0; transform: translateY(.14em); }
   .hero-title, .hero-chips, .hero-body { padding-inline: var(--gutter); }
   .hero-title { display: flex; justify-content: space-between; align-items: center; gap: 14px; padding-top: 18px; padding-bottom: 14px; }
   h1 { font-size: clamp(36px, 10.4vw, 58px); }
+  .hero-kicker { font-size: 11.5px; letter-spacing: .14em; margin-bottom: 10px; }
   .tiktok { position: static; width: 60px; height: 60px; flex: none; }
   .ba { flex: none; aspect-ratio: 4 / 5; min-height: 0; }
   /* the portrait photo is letterboxed in the 4:5 frame: fade its side edges into the white */
