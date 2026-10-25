@@ -115,13 +115,6 @@
     $$(".js-store").forEach((el) => (el.textContent = reg.store));
     $$(".js-rating-source").forEach((el) => (el.textContent = src));
     $$(".js-shades-intro").forEach((el) => (el.textContent = `Every mask is ${reg.size}, made with argan oil and biotin, and ${reg.shipping}.`));
-    const bars = $(".js-bars");
-    if (bars) {
-      bars.innerHTML = [5, 4, 3, 2, 1].map((n) => `
-        <div class="bar"><span aria-hidden="true">${n} star${n > 1 ? "s" : ""}</span>
-          <span class="bar-track" role="img" aria-label="${r.stars[n]}% of ratings are ${n} star${n > 1 ? "s" : ""}"><span style="width:${r.stars[n]}%"></span></span>
-          <span class="bar-pct" aria-hidden="true">${r.stars[n]}%</span></div>`).join("");
-    }
     $$(".reel").forEach((reel) => {
       const a = $("figcaption a", reel);
       const s = byId[reel.dataset.shade];
@@ -610,6 +603,37 @@
     new IntersectionObserver((entries) => {
       if (!entries[0].isIntersecting && !film.paused) film.pause();
     }, { threshold: 0 }).observe(film);
+  }
+
+  /* ---------- featured reviews (pasted by the owner into BLONDZ.reviews) ---------- */
+  const rcBox = $(".js-review-cards");
+  const esc = (t) => String(t == null ? "" : t).replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
+  if (rcBox && Array.isArray(C.reviews) && C.reviews.length) {
+    const row = $(".js-rc-row", rcBox);
+    row.innerHTML = C.reviews.map((rv) => `
+      <article class="rc" role="listitem">
+        <div class="rc-who"><span class="rc-avatar" aria-hidden="true">${esc(String(rv.name).trim().charAt(0))}</span>
+          <span class="rc-name">${esc(rv.name)}<svg class="rc-check" role="img" aria-label="Verified purchase"><use href="#i-verified"/></svg></span></div>
+        <p class="stars rc-stars" role="img" aria-label="${esc(rv.stars)} out of 5 stars">${starsHTML(rv.stars)}</p>
+        ${rv.title ? `<h4 class="rc-heading">${esc(rv.title)}</h4>` : ""}
+        <p class="rc-text">${esc(rv.text)}</p>
+        <button class="rc-more" type="button" hidden>Read more</button>
+        <p class="rc-meta">Verified Purchase on Amazon${rv.where ? ` · ${esc(rv.where)}` : ""}${rv.date ? ` · ${esc(rv.date)}` : ""}${byId[rv.shade] ? ` · ${byId[rv.shade].name}` : ""}</p>
+      </article>`).join("");
+    rcBox.hidden = false;
+    $$(".rc", row).forEach((card) => {
+      const text = $(".rc-text", card);
+      const more = $(".rc-more", card);
+      if (text.scrollHeight <= text.clientHeight + 2) return;
+      more.hidden = false;
+      more.addEventListener("click", () => {
+        const open = card.classList.toggle("is-open");
+        more.textContent = open ? "Show less" : "Read more";
+      });
+    });
+    const step = () => (row.firstElementChild ? row.firstElementChild.getBoundingClientRect().width + 20 : 300);
+    $(".js-rc-prev", rcBox).addEventListener("click", () => row.scrollBy({ left: -step(), behavior: reduceMotion ? "auto" : "smooth" }));
+    $(".js-rc-next", rcBox).addEventListener("click", () => row.scrollBy({ left: step(), behavior: reduceMotion ? "auto" : "smooth" }));
   }
 
   /* ---------- photo lightbox ---------- */

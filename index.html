@@ -591,6 +591,9 @@ window.BLONDZ = {
       shipping: "sold on Amazon UK"
     }
   },
+  // Featured Amazon reviews, pasted word for word by the owner (their own product reviews). Empty = no review cards.
+  // { name: "Jane D.", stars: 5, title: "…", text: "…", where: "United States", date: "September 2026", shade: "blonde-pearl" }
+  reviews: [],
   instagram: "https://www.instagram.com/blondzonlyus/",
   tiktok: "https://www.tiktok.com/@girlzonlylatam",
   shades: [
@@ -680,6 +683,7 @@ window.BLONDZ = {
       <polygon points="267.4,189.1 282,216.8 284.9,222.4 287.8,216.8 302.3,189.1 314.2,189.1 290.5,232.8 290.1,234.4 290.1,267.5 279.7,267.5 279.7,234.4 279.3,232.8 255.6,189.1"/>
       <rect x="64.7" y="274.2" width="249.7" height="7.2"/>
     </g>
+    <symbol id="i-verified" viewBox="0 0 24 24"><path fill="#F2A516" d="M12 1.6l2.5 1.8 3.1-.1 1 2.9 2.5 1.9-1 2.9 1 2.9-2.5 1.9-1 2.9-3.1-.1L12 22.4l-2.5-1.8-3.1.1-1-2.9-2.5-1.9 1-2.9-1-2.9 2.5-1.9 1-2.9 3.1.1z"/><path d="M7.6 12.3l2.9 2.9 5.9-6" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.6l2.9 6 6.5.8-4.8 4.5 1.2 6.5L12 17.2l-5.8 3.2 1.2-6.5L2.6 9.4l6.5-.8z"/></symbol>
     <symbol id="i-chev" viewBox="0 0 24 24"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-sound-off" viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l4 6M21 9l-4 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
@@ -1003,7 +1007,6 @@ window.BLONDZ = {
         <p class="stars stars--lg js-stars" aria-hidden="true"></p>
         <p class="score-meta js-score-meta">out of 5, from 350 ratings for the four masks (October 2026)</p>
       </div>
-      <div class="bars js-bars" role="group" aria-label="Rating breakdown"></div>
       <div class="themes">
         <h3>What reviewers mention most</h3>
         <ul>
@@ -1015,6 +1018,16 @@ window.BLONDZ = {
         </ul>
         <a class="link js-reviews" href="https://www.amazon.com/dp/B093TJ5RKK#customerReviews" target="_blank" rel="noopener">Read the reviews on Amazon</a>
       </div>
+    </div>
+    <div class="wrap review-cards js-review-cards" hidden>
+      <div class="rc-head">
+        <h3 class="rc-title">In their own words</h3>
+        <div class="rc-nav">
+          <button class="icon-btn icon-btn--ink js-rc-prev" type="button" aria-label="Previous reviews"><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          <button class="icon-btn icon-btn--ink js-rc-next rc-next" type="button" aria-label="Next reviews"><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        </div>
+      </div>
+      <div class="rc-row js-rc-row" role="list" aria-label="Amazon reviews"></div>
     </div>
   </section>
 
