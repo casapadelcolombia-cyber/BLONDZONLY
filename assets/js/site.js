@@ -618,7 +618,7 @@
         ${rv.title ? `<h4 class="rc-heading">${esc(rv.title)}</h4>` : ""}
         <p class="rc-text">${esc(rv.text)}</p>
         <button class="rc-more" type="button" hidden>Read more</button>
-        <p class="rc-meta">Verified Purchase on Amazon${rv.where ? ` · ${esc(rv.where)}` : ""}${rv.date ? ` · ${esc(rv.date)}` : ""}${byId[rv.shade] ? ` · ${byId[rv.shade].name}` : ""}</p>
+        <p class="rc-meta">Verified Purchase on Amazon${rv.where ? ` · ${esc(rv.where)}` : ""}${rv.date ? ` · ${esc(rv.date)}` : ""}</p>
       </article>`).join("");
     rcBox.hidden = false;
     $$(".rc", row).forEach((card) => {
