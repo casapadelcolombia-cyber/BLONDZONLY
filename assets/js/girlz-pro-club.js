@@ -53,7 +53,7 @@
       tab_misiones: "Missions",
       tab_canjear: "Redeem stars",
       tab_invitar: "Invite",
-      tab_historial: "Star history",
+      tab_historial: "History",
       tabs: "My club sections",
       drops_t: "Open drops",
       drops_guia_t: "How drops work",
@@ -211,6 +211,12 @@
       invitar_req: "She must live in the US, be 18 or older and have 1,000+ followers on Instagram or TikTok.",
       sin_codigo: "Your invite code will show up here soon.",
       historial_t: "Star history",
+      bono_t: "Cash bonus for views",
+      bono_p: "When a reel or TikTok you post for the club passes {vistas} views in its first {dias} days, we pay you US${usd}, on top of your stars. One bonus per video. We check the views ourselves and email you when you earn it.",
+      bono_sin: "Your cash bonuses will show up here.",
+      bono_vistas: "{n} views",
+      bono_por_pagar: "Earned {fecha}. We'll email you to arrange the payment.",
+      bono_pagado: "Paid {fecha}",
       sin_movs: "Your stars will show up here as soon as we approve your first post.",
       mv_publicacion: "Approved post",
       mv_mision: "Mission",
@@ -431,6 +437,12 @@
       invitar_req: "Debe vivir en EE. UU., tener 18 años o más y 1,000+ seguidores en Instagram o TikTok.",
       sin_codigo: "Tu código de invitación aparecerá aquí pronto.",
       historial_t: "Historial de estrellas",
+      bono_t: "Bono en efectivo por vistas",
+      bono_p: "Cuando un reel o TikTok que publicas para el club pasa las {vistas} vistas en sus primeros {dias} días, te pagamos US${usd}, además de tus estrellas. Un bono por video. Las vistas las revisamos nosotras y te escribimos cuando lo ganas.",
+      bono_sin: "Aquí vas a ver tus bonos en efectivo.",
+      bono_vistas: "{n} vistas",
+      bono_por_pagar: "Ganado el {fecha}. Te escribimos para coordinar el pago.",
+      bono_pagado: "Pagado el {fecha}",
       sin_movs: "Tus estrellas aparecerán aquí apenas aprobemos tu primera publicación.",
       mv_publicacion: "Publicación aprobada",
       mv_mision: "Misión",
@@ -662,7 +674,7 @@
   function vistaEntrar() {
     var a = S.aviso;
     return '<section class="gp-entrar" aria-labelledby="gp-e-t">' +
-      '<div><p class="gp-kicker"><span class="gp-star" aria-hidden="true">★</span> BLONDZ PRO</p><h1 id="gp-e-t">' + h("entrar_t") + "</h1></div>" +
+      '<div><p class="gp-kicker">BLONDZ PRO <span class="gp-star" aria-hidden="true">★</span></p><h1 id="gp-e-t">' + h("entrar_t") + "</h1></div>" +
       "<p>" + h("entrar_p") + "</p>" +
       '<form data-form="entrar" novalidate><div class="gp-f" data-campo="correo"><label for="gp-correo">' + h("correo") + "</label>" +
       '<input id="gp-correo" name="correo" type="email" autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false" maxlength="120" value="' + esc(S.correo) + '" aria-describedby="egp-correo" required>' +
@@ -675,7 +687,7 @@
   function vistaCodigo() {
     var a = S.aviso;
     return '<section class="gp-entrar" aria-labelledby="gp-c-t">' +
-      '<div><p class="gp-kicker"><span class="gp-star" aria-hidden="true">★</span> BLONDZ PRO</p><h1 id="gp-c-t">' + h("codigo_t") + "</h1></div>" +
+      '<div><p class="gp-kicker">BLONDZ PRO <span class="gp-star" aria-hidden="true">★</span></p><h1 id="gp-c-t">' + h("codigo_t") + "</h1></div>" +
       "<p>" + h("codigo_p", { correo: S.correo }) + "</p>" +
       (S.codigoPrueba ? '<p class="gp-aviso gp-aviso--info">' + h("codigo_prueba", { codigo: S.codigoPrueba }) + "</p>" : "") +
       '<form data-form="verificar" novalidate><div class="gp-f" data-campo="codigo"><label for="gp-codigo">' + h("codigo") + "</label>" +
@@ -715,7 +727,7 @@
       info += "<p>" + (p.por_vencer === 1 ? h("vencen_1", { fecha: fecha(p.vence_el) }) : h("vencen", { n: num(p.por_vencer), fecha: fecha(p.vence_el) })) +
         ' <a href="#panel-canjear" data-tab="canjear">' + h("canjealas") + "</a></p>";
     }
-    return '<div class="gp-top"><div><p class="gp-kicker"><span class="gp-star" aria-hidden="true">★</span> My BLONDZ PRO</p><h1>' + h("hola", { nombre: primer }) + "</h1></div>" +
+    return '<div class="gp-top"><div><p class="gp-kicker">My BLONDZ PRO <span class="gp-star" aria-hidden="true">★</span></p><h1>' + h("hola", { nombre: primer }) + "</h1></div>" +
       '<button class="gp-linkbtn" type="button" data-acc="salir">' + h("salir") + "</button></div>" +
       '<section class="gp-pts" aria-label="' + h("tu_saldo") + '"><p class="gp-pts-n">' + num(p.saldo || 0) + "<small>" + h("estrellas") + "</small></p>" +
       '<div class="gp-pts-info">' + info + "</div></section>";
@@ -956,9 +968,24 @@
       '<p class="gp-small">' + h("invitar_req") + "</p></div></div>";
   }
 
+  // Bono en efectivo por vistas: la regla (del servidor, con los valores de hoy por si falta) y los bonos de ella.
+  function bloqueBono() {
+    var r = (S.yo.reglas && S.yo.reglas.bono) || {}, bs = S.yo.bonos || [];
+    var html = '<div class="gp-bloque gp-bono" style="margin-top:24px"><h2>' + h("bono_t") + '</h2><p class="gp-small">' +
+      h("bono_p", { vistas: num(r.vistas || 20000), dias: num(r.dias || 30), usd: num(r.usd || 100) }) + "</p>";
+    if (!bs.length) return html + '<p class="gp-vacio" style="margin-top:14px">' + h("bono_sin") + "</p></div>";
+    html += '<div class="gp-movs" style="margin-top:14px">';
+    bs.forEach(function (b) {
+      var pagado = b.estado === "pagado";
+      html += '<div class="gp-mov"><span>' + esc(b.titulo || "") + " · " + h("bono_vistas", { n: num(Number(b.vistas) || 0) }) + '</span><b class="' + (pagado ? "mas" : "") + '">US$' + num(Number(b.usd) || 0) +
+        "</b><small>" + (pagado ? h("bono_pagado", { fecha: fecha(b.pagado_en, true) }) : h("bono_por_pagar", { fecha: fecha(b.creado_en, true) })) + "</small></div>";
+    });
+    return html + "</div></div>";
+  }
+
   function panelHistorial() {
     var ms = S.yo.movimientos || [];
-    var html = '<div class="gp-bloque" style="margin-top:24px"><h2>' + h("historial_t") + "</h2>";
+    var html = bloqueBono() + '<div class="gp-bloque" style="margin-top:24px"><h2>' + h("historial_t") + "</h2>";
     if (!ms.length) return html + '<p class="gp-vacio">' + h("sin_movs") + "</p></div>";
     html += '<div class="gp-movs">';
     ms.forEach(function (m) {

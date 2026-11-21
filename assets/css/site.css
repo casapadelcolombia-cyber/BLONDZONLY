@@ -21,8 +21,8 @@
   --accent: #8E2DF0;
   --tint: #F3EBDD;
   --star: #F2A516;
-  /* Estrella de BLONDZ PRO (21-nov): morado claro, legible sobre blanco, marfil y tinta. Las de calificación son --star. */
-  --pro-star: #9B6BEA;
+  /* Estrella de BLONDZ PRO (21-nov): el mismo morado del botón (--violet), a la derecha del nombre. Las de calificación son --star. */
+  --pro-star: #7C2BD9;
 
   --f-display: "Bodoni Moda", "Bodoni 72", Didot, Georgia, serif;
   --f-text: "Jost", "Futura", "Century Gothic", "Avenir Next", system-ui, sans-serif;
