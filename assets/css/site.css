@@ -21,6 +21,8 @@
   --accent: #8E2DF0;
   --tint: #F3EBDD;
   --star: #F2A516;
+  /* Estrella de BLONDZ PRO (21-nov): morado claro, legible sobre blanco, marfil y tinta. Las de calificación son --star. */
+  --pro-star: #9B6BEA;
 
   --f-display: "Bodoni Moda", "Bodoni 72", Didot, Georgia, serif;
   --f-text: "Jost", "Futura", "Century Gothic", "Avenir Next", system-ui, sans-serif;
@@ -136,6 +138,9 @@ strong { font-weight: 500; }
 .primary-nav a { color: var(--ink-2); text-decoration: none; padding-block: 8px; }
 .primary-nav a:hover { color: var(--ink); }
 .header-actions { display: flex; align-items: center; gap: 10px; }
+/* BLONDZ PRO en el header del celular: el menú (.primary-nav) se esconde a 860 px o menos. */
+.pro-movil { display: none; }
+.pro-estrella { color: var(--pro-star); }
 .region { position: relative; }
 .region-btn {
   display: inline-flex; align-items: center; gap: 7px; min-height: 42px; padding: 0 10px 0 12px;
@@ -569,6 +574,12 @@ h1 em.is-out { opacity: 0; transform: translateY(.14em); }
   .foot-note { flex: none; }
   .region-btn { padding: 0 8px 0 10px; min-height: 40px; }
   .header-actions { gap: 8px; }
+  .site-header { gap: 12px; }
+  .pro-movil {
+    display: inline-flex; align-items: center; gap: 4px; min-height: 40px; padding: 0 2px;
+    font-size: 12.5px; font-weight: 600; letter-spacing: .06em; color: var(--ink); text-decoration: none; white-space: nowrap;
+  }
+  .pro-movil .pro-estrella { font-size: 14px; }
 
   .buybar {
     position: fixed; left: 10px; right: 10px; bottom: calc(10px + env(safe-area-inset-bottom)); z-index: 60;
@@ -593,6 +604,19 @@ h1 em.is-out { opacity: 0; transform: translateY(.14em); }
   .step figure { aspect-ratio: 4 / 5; }
   .reel-row { grid-auto-columns: 31%; }
   .lede { min-height: 0; }
+}
+
+/* En la portada el header también lleva región y «Buy on Amazon»: hasta 450 px el enlace queda en «★ PRO» y el header se
+   compacta para que el botón no se parta en dos líneas (en las páginas del club cabe «★ BLONDZ PRO» completo hasta 300 px). */
+@media (max-width: 450px) {
+  .pro-movil--corto .pro-largo { display: none; }
+  .site-header { gap: 8px; }
+  .header-actions { gap: 6px; }
+  .header-actions .btn-sm { padding: 0 14px; }
+}
+@media (max-width: 380px) {
+  .region-btn { gap: 5px; }
+  .region-code { display: none; }
 }
 
 @media (max-width: 380px) {

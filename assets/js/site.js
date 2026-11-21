@@ -107,7 +107,7 @@
     $$(".js-rating").forEach((el) => (el.textContent = `${r.value} out of 5 from ${r.count} ${src} ratings`));
     $$(".js-announce").forEach((el) => (el.textContent = `Rated ${r.value} out of 5 by ${r.count} shoppers on ${src}.`));
     $$(".js-score").forEach((el) => (el.textContent = r.value));
-    $$(".js-score-meta").forEach((el) => (el.textContent = `out of 5, from ${r.count} ratings (${r.checked})`));
+    $$(".js-score-meta").forEach((el) => (el.textContent = `out of 5, from ${r.count} ratings`)); // 21-nov: sin la fecha de revisión (r.checked queda solo como nota interna)
     $$(".js-reviews").forEach((el) => {
       el.href = reg.reviewsUrl;
       el.textContent = `Read the reviews on ${reg.store}`;
