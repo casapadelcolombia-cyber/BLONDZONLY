@@ -140,7 +140,9 @@ strong { font-weight: 500; }
 .header-actions { display: flex; align-items: center; gap: 10px; }
 /* BLONDZ PRO en el header del celular: el menú (.primary-nav) se esconde a 860 px o menos. */
 .pro-movil { display: none; }
-.pro-estrella { color: var(--pro-star); }
+/* La estrella de BLONDZ PRO va arriba a la derecha de «PRO», como un exponente (21-nov: «como el de GIRLZ PRO»).
+   Con position y no con vertical-align, para que funcione igual dentro del botón flex del celular. */
+.pro-estrella { color: var(--pro-star); display: inline-block; font-size: .62em; line-height: 1; position: relative; top: -.78em; margin-left: .1em; }
 .region { position: relative; }
 .region-btn {
   display: inline-flex; align-items: center; gap: 7px; min-height: 42px; padding: 0 10px 0 12px;
@@ -579,7 +581,7 @@ h1 em.is-out { opacity: 0; transform: translateY(.14em); }
     display: inline-flex; align-items: center; gap: 4px; min-height: 40px; padding: 0 2px;
     font-size: 12.5px; font-weight: 600; letter-spacing: .06em; color: var(--ink); text-decoration: none; white-space: nowrap;
   }
-  .pro-movil .pro-estrella { font-size: 14px; }
+  .pro-movil .pro-estrella { font-size: 9px; margin-left: -3px; } /* el gap de 4 px del botón la separaría de la O */
 
   .buybar {
     position: fixed; left: 10px; right: 10px; bottom: calc(10px + env(safe-area-inset-bottom)); z-index: 60;
